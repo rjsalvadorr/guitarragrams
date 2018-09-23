@@ -1,23 +1,23 @@
 {
-  "chordType": "Open Voicings",
+  "patternType": "Open Voicings",
   "chordGroups": [
     {
       "chordQuality": "major",
       "diagrams": [
         {
-          "inversion": 0,
+          "inversion": "root",
           "markers": [
-            "3rd,6,6",
-            "5th,3,7",
-            "root,2,8"
+            "5th,2,1",
+            "3rd,3,2",
+            "root,6,1"
           ]
         },
         {
-          "inversion": 2,
+          "inversion": "2nd",
           "markers": [
-            "3rd,6,6",
-            "5th,3,7",
-            "root,2,8"
+            "root,2,2",
+            "5th,3,1",
+            "3rd,6,1"
           ]
         }
       ]
@@ -26,7 +26,7 @@
       "chordQuality": "minor",
       "diagrams": [
         {
-          "inversion": 0,
+          "inversion": "root",
           "markers": [
             "3rd,6,6",
             "5th,3,7",
@@ -34,7 +34,7 @@
           ]
         },
         {
-          "inversion": 2,
+          "inversion": "2nd",
           "markers": [
             "3rd,6,6",
             "5th,3,7",

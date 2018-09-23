@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PatternGroup :groupData="diagrams.open" />
+    <PatternGroup :groupData="diagrams.threeString" />
     <hr>
-    <h1>Debug info</h1>
+    <h4>Debug info (App)</h4>
     <pre>
       <code>{{ `diagrams = ${JSON.stringify(diagrams, null, 2)}` }}</code>
     </pre>
@@ -10,25 +11,24 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import PatternGroup from "./components/PatternGroup.vue";
 import chordDiagramsOpen from "./data/chord-diagrams-open.json";
 import chordDiagrams3string from "./data/chord-diagrams-3string.json";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    PatternGroup
   },
   data: function() {
     return {
       diagrams: {
         open: chordDiagramsOpen,
-        '3string': chordDiagrams3string
+        threeString: chordDiagrams3string
       }
-    }
+    };
   }
 };
-
 </script>
 
 <style lang="scss">

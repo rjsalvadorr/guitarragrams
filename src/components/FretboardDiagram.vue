@@ -1,20 +1,52 @@
 <template>
-  <div :class="['fretboard', 'fretboard--' + instrument]">
-    <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
-      <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
-        <div class='marker'></div>
+  <div class="fretboard-diagram-container">
+    <span>{{ diagramData.inversion }}</span>
+    <div :class="['fretboard', 'fretboard--' + instrument]">
+      <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
+        <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
+          <FretboardMarker :markerData="markers" :stringNum="n" :fretNum="m"/>
+        </div>
       </div>
+      <h4>Debug info (FretboardDiagram)</h4>
+      <pre>
+        <code>{{ `diagramData = ${JSON.stringify(diagramData, null, 2)}` }}</code>
+        <code>{{ `strings = ${JSON.stringify(strings, null, 2)}` }}</code>
+        <code>{{ `frets = ${JSON.stringify(frets, null, 2)}` }}</code>
+        <code>{{ `markers = ${JSON.stringify(markers, null, 2)}` }}</code>
+      </pre>
     </div>
   </div>
 </template>
 
 <script>
+import FretboardMarker from './FretboardMarker.vue';
+
 export default {
   name: "FretboardDiagram",
   props: {
     instrument: String,
-    strings: Number,
-    frets: Number
+    diagramData: Object,
+  },
+  computed: {
+    strings: function () {
+      return 6;
+    },
+    frets: function () {
+      return 5;
+    },
+    markers: function() {
+      return this.diagramData.markers.map(function(rawString) {
+        const exploded = rawString.split(',');
+        return {
+          degree: exploded[0],
+          string: exploded[1],
+          fret: exploded[2]
+        }
+      });
+    }
+  },
+  components: {
+    FretboardMarker
   }
 };
 </script>
@@ -22,7 +54,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 $fretUnit: 30px;
-$markerDiameter: 20px;
 
 .fretboard {
   z-index: 10;
@@ -44,18 +75,6 @@ $markerDiameter: 20px;
   &--1 {
     border-left: 4px solid #111111;
   }
-}
-
-.marker {
-  background: #ffffff;
-  width: $markerDiameter;
-  height: $markerDiameter;
-  border-radius: 50%;
-  margin: auto;
-  position: relative;
-  top: -$fretUnit / 2;
-  border: 4px #000000 solid;
-  z-index: 40;
 }
 
 .fretboard--guitar {
