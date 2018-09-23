@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <FretboardDiagram msg="whoa"/>
+    <FretboardDiagram :strings="6" :frets="5"/>
   </div>
 </template>
 

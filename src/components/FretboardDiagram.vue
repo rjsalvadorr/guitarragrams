@@ -1,30 +1,7 @@
 <template>
   <div class='fretboard'>
-    <div class='string 6'>
-      <div class='fret 1'>
-        <div class='marker active third'></div>
-      </div>
-      <div class='fret 2'>
-        <div class='marker'></div>
-      </div>
-      <div class='fret 3'>
-        <div class='marker'></div>
-      </div>
-      <div class='fret 4'>
-        <div class='marker'></div>
-      </div>
-    </div>
-    <div class='string 5'>
-      <div class='fret 1'>
-        <div class='marker'></div>
-      </div>
-      <div class='fret 2'>
-        <div class='marker active root'></div>
-      </div>
-      <div class='fret 3'>
-        <div class='marker'></div>
-      </div>
-      <div class='fret 4'>
+    <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
+      <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
         <div class='marker'></div>
       </div>
     </div>
@@ -35,7 +12,8 @@
 export default {
   name: "FretboardDiagram",
   props: {
-    msg: String
+    strings: Number,
+    frets: Number
   }
 };
 </script>
