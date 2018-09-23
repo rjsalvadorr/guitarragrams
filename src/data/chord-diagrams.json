@@ -1,24 +1,96 @@
 [
   {
-    "root": "G",
-    "chordType": "minor",
-    "inversion": 2,
-    "voicingType": "5-string",
-    "markers": [
-      "6,6,3rd",
-      "3,7,5th",
-      "2,8,root"
+    "chordType": "Open Voicings",
+    "chordGroups": [
+      {
+        "chordType": "major",
+        "diagrams": [
+          {
+            "inversion": 0,
+            "markers": [
+              "3rd,6,6",
+              "5th,3,7",
+              "root,2,8"
+            ]
+          },
+          {
+            "inversion": 2,
+            "markers": [
+              "3rd,6,6",
+              "5th,3,7",
+              "root,2,8"
+            ]
+          },
+        ]
+      },
+      {
+        "chordType": "minor",
+        "diagrams": [
+          {
+            "inversion": 0,
+            "markers": [
+              "3rd,6,6",
+              "5th,3,7",
+              "root,2,8"
+            ]
+          },
+          {
+            "inversion": 2,
+            "markers": [
+              "3rd,6,6",
+              "5th,3,7",
+              "root,2,8"
+            ]
+          },
+        ]
+      },
     ]
   },
   {
-    "root": "C",
-    "chordType": "minor",
-    "inversion": 2,
-    "voicingType": "5-string",
-    "markers": [
-      "5,6,3rd",
-      "2,8,5th",
-      "1,8,root"
+    "chordType": "3-string Voicings",
+    "chordGroups": [
+      {
+        "chordType": "major",
+        "diagrams": [
+          {
+            "inversion": 0,
+            "markers": [
+              "3rd,6,6",
+              "5th,3,7",
+              "root,2,8"
+            ]
+          },
+          {
+            "inversion": 2,
+            "markers": [
+              "3rd,6,6",
+              "5th,3,7",
+              "root,2,8"
+            ]
+          },
+        ]
+      },
+      {
+        "chordType": "minor",
+        "diagrams": [
+          {
+            "inversion": 0,
+            "markers": [
+              "3rd,6,6",
+              "5th,3,7",
+              "root,2,8"
+            ]
+          },
+          {
+            "inversion": 2,
+            "markers": [
+              "3rd,6,6",
+              "5th,3,7",
+              "root,2,8"
+            ]
+          },
+        ]
+      },
     ]
   }
 ]
