@@ -5,19 +5,19 @@
       "chordQuality": "major",
       "diagrams": [
         {
-          "inversion": 0,
+          "inversion": "root",
           "markers": [
-            "3rd,6,6",
-            "5th,3,7",
-            "root,2,8"
+            "5th,1,1",
+            "3rd,2,2",
+            "root,3,2"
           ]
         },
         {
-          "inversion": 2,
+          "inversion": "1st",
           "markers": [
-            "3rd,6,6",
-            "5th,3,7",
-            "root,2,8"
+            "root,1,1",
+            "5th,2,1",
+            "3rd,3,2"
           ]
         }
       ]
@@ -26,19 +26,19 @@
       "chordQuality": "minor",
       "diagrams": [
         {
-          "inversion": 0,
+          "inversion": "root",
           "markers": [
-            "3rd,6,6",
-            "5th,3,7",
-            "root,2,8"
+            "5th,1,1",
+            "3rd,2,1",
+            "root,3,1"
           ]
         },
         {
-          "inversion": 2,
+          "inversion": "1st",
           "markers": [
-            "3rd,6,6",
-            "5th,3,7",
-            "root,2,8"
+            "root,1,1",
+            "5th,2,2",
+            "3rd,3,3"
           ]
         }
       ]

@@ -13,6 +13,14 @@
           ]
         },
         {
+          "inversion": "1st",
+          "markers": [
+            "root,2,2",
+            "5th,3,1",
+            "3rd,6,1"
+          ]
+        },
+        {
           "inversion": "2nd",
           "markers": [
             "root,2,2",
@@ -28,17 +36,17 @@
         {
           "inversion": "root",
           "markers": [
-            "3rd,6,6",
-            "5th,3,7",
-            "root,2,8"
+            "5th,2,1",
+            "3rd,3,1",
+            "root,6,1"
           ]
         },
         {
-          "inversion": "2nd",
+          "inversion": "1st",
           "markers": [
-            "3rd,6,6",
-            "5th,3,7",
-            "root,2,8"
+            "root,2,3",
+            "5th,3,2",
+            "3rd,6,1"
           ]
         }
       ]

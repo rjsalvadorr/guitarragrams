@@ -1,12 +1,14 @@
 <template>
   <div class="chord-group">
     <h3>{{ groupData.chordQuality }}</h3>
-    <FretboardDiagram
-      instrument="guitar"
-      v-for="n in groupData.diagrams"
-      :key="n.inversion + Date.now()"
-      :diagramData="n"
-    />
+    <div class="chord-group--diagrams">
+      <FretboardDiagram
+        instrument="guitar"
+        v-for="n in groupData.diagrams"
+        :key="n.inversion + Date.now()"
+        :diagramData="n"
+      />
+    </div>
   </div>
 </template>
 
@@ -16,7 +18,7 @@ import FretboardDiagram from "./FretboardDiagram.vue";
 export default {
   name: "ChordGroup",
   props: {
-    groupData: Object,
+    groupData: Object
   },
   components: {
     FretboardDiagram
@@ -26,4 +28,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.chord-group--diagrams {
+  display: flex;
+}
 </style>

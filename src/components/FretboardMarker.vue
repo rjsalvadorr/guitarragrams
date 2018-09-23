@@ -9,16 +9,19 @@ export default {
   props: {
     stringNum: Number,
     fretNum: Number,
-    markerData: Array,
+    markerData: Array
   },
   computed: {
     markerClassname: function() {
-      for(var i = 0; i < this.markerData.length; i++) {
-        if (this.markerData[i].string == this.stringNum && this.markerData[i].fret == this.fretNum) {
-          return 'active marker--' + this.markerData[i].degree;
+      for (var i = 0; i < this.markerData.length; i++) {
+        if (
+          this.markerData[i].string == this.stringNum &&
+          this.markerData[i].fret == this.fretNum
+        ) {
+          return "active marker--" + this.markerData[i].degree;
         }
       }
-      return '';
+      return "";
     }
   }
 };
