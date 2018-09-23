@@ -1,6 +1,7 @@
 <template>
   <div class="pattern-group">
-    <h2>{{ groupData.patternType }}</h2>
+    <h2 class="pattern-group--label">{{ groupData.patternType }}</h2>
+    <slot></slot>
     <ChordGroup v-for="n in groupData.chordGroups" :key="n.chordQuality + Date.now()" :groupData="n" />
   </div>
 </template>
@@ -21,4 +22,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.pattern-group {
+  margin-bottom: 4rem;
+
+  &--label {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: center;
+  }
+}
 </style>

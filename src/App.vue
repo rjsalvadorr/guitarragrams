@@ -1,12 +1,17 @@
 <template>
-  <div id="app">
-    <PatternGroup :groupData="diagrams.open" />
-    <PatternGroup :groupData="diagrams.threeString" />
-    <hr>
-    <h4>Debug info (App)</h4>
-    <pre>
-      <code>{{ `diagrams = ${JSON.stringify(diagrams, null, 2)}` }}</code>
-    </pre>
+  <div id="app" class="app">
+    <h1 class="app--title">Guitarragrams</h1>
+    <p>A visual reference for guitar chord voicings.</p>
+    <PatternGroup :groupData="diagrams.open">
+      <p>
+        Bacon ipsum dolor amet incididunt sunt kielbasa do turkey pariatur porchetta excepteur fugiat aliquip ea.
+      </p>
+    </PatternGroup>
+    <PatternGroup :groupData="diagrams.threeString">
+      <p>
+        Ex voluptate veniam, ham hock salami sirloin aliqua duis nostrud qui.
+      </p>
+    </PatternGroup>
   </div>
 </template>
 
@@ -44,5 +49,21 @@ export default {
 pre,
 code {
   text-align: left;
+}
+
+.app {
+  &--title {
+    font-size: 5.0rem;
+  }
+}
+
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .app {
+    &--title {
+      font-size: 6.0rem;
+    }
+  }
 }
 </style>

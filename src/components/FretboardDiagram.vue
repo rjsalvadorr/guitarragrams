@@ -1,6 +1,7 @@
 <template>
   <div class="fretboard-diagram">
     <span>{{ label }}</span>
+    <slot></slot>
     <div :class="['fretboard', 'fretboard--' + instrument]">
       <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
         <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
@@ -53,32 +54,33 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$fretUnit: 30px;
+$fretUnit: 25px;
+$borderWidth: 3px;
 
 .fretboard-diagram {
-  flex-basis: 33%;
+  flex-basis: 100%;
 }
 
 .fretboard {
   z-index: 10;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .string {
   display: flex;
-  border-top: 4px solid #111111;
+  border-top: $borderWidth solid #111111;
   z-index: 20;
 }
 
 .fret {
   flex-grow: 1;
-  border-right: 4px solid #111111;
+  border-right: $borderWidth solid #111111;
   width: 20px;
   height: $fretUnit;
   z-index: 30;
 
   &--1 {
-    border-left: 4px solid #111111;
+    border-left: $borderWidth solid #111111;
   }
 }
 
@@ -86,6 +88,20 @@ $fretUnit: 30px;
   .string--6 .fret {
     border-left: none;
     border-right: none;
+  }
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .fretboard-diagram {
+    flex-basis: 50%
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  .fretboard-diagram {
+    flex-basis: 33%
   }
 }
 </style>

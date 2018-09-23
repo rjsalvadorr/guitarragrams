@@ -1,6 +1,7 @@
 <template>
   <div class="chord-group">
-    <h3>{{ groupData.chordQuality }}</h3>
+    <h3 class="chord-group--label">{{ groupData.chordQuality }}</h3>
+    <slot></slot>
     <div class="chord-group--diagrams">
       <FretboardDiagram
         instrument="guitar"
@@ -28,7 +29,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.chord-group--diagrams {
-  display: flex;
+.chord-group {
+  &--label {
+    text-align: center;
+    margin-bottom: 0;
+    text-transform: capitalize;
+  }
+
+  &--diagrams {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 </style>

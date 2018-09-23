@@ -29,8 +29,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$fretUnit: 30px;
-$markerDiameter: 20px;
+$fretUnit: 25px;
+$markerDiameter: $fretUnit * 0.66;
+$borderWidth: 3px;
 
 .marker {
   background: #ffffff;
@@ -40,7 +41,7 @@ $markerDiameter: 20px;
   margin: auto;
   position: relative;
   top: -$fretUnit / 2;
-  border: 4px #000000 solid;
+  border: $borderWidth #000000 solid;
   z-index: 40;
   display: none;
 
