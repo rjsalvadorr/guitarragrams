@@ -1,7 +1,10 @@
 <template>
   <div id="app" class="app">
     <h1 class="app--title">Guitarragrams</h1>
-    <p>A visual reference for guitar chord voicings.</p>
+    <p>
+      A visual reference for guitar chord voicings,
+      built and updated by <a href="https://rj-salvador.com">RJ Salvador</a>.
+    </p>
     <PatternGroup :groupData="diagrams.open">
       <p>
         Bacon ipsum dolor amet incididunt sunt kielbasa do turkey pariatur porchetta excepteur fugiat aliquip ea.
