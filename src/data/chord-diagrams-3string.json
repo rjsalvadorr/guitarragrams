@@ -1,0 +1,47 @@
+{
+  "chordType": "3-string Voicings",
+  "chordGroups": [
+    {
+      "chordQuality": "major",
+      "diagrams": [
+        {
+          "inversion": 0,
+          "markers": [
+            "3rd,6,6",
+            "5th,3,7",
+            "root,2,8"
+          ]
+        },
+        {
+          "inversion": 2,
+          "markers": [
+            "3rd,6,6",
+            "5th,3,7",
+            "root,2,8"
+          ]
+        }
+      ]
+    },
+    {
+      "chordQuality": "minor",
+      "diagrams": [
+        {
+          "inversion": 0,
+          "markers": [
+            "3rd,6,6",
+            "5th,3,7",
+            "root,2,8"
+          ]
+        },
+        {
+          "inversion": 2,
+          "markers": [
+            "3rd,6,6",
+            "5th,3,7",
+            "root,2,8"
+          ]
+        }
+      ]
+    }
+  ]
+}
