@@ -21,6 +21,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+$fretUnit: 30px;
+$markerDiameter: 20px;
+
 .fretboard {
   z-index: 10;
 }
@@ -35,7 +38,7 @@ export default {
   flex-grow: 1;
   border-right: 4px solid #111111;
   width: 20px;
-  height: 30px;
+  height: $fretUnit;
   z-index: 30;
 
   &--1 {
@@ -45,12 +48,12 @@ export default {
 
 .marker {
   background: #ffffff;
-  width: 20px;
-  height: 20px;
+  width: $markerDiameter;
+  height: $markerDiameter;
   border-radius: 50%;
   margin: auto;
   position: relative;
-  top: -16px;
+  top: -$fretUnit / 2;
   border: 4px #000000 solid;
   z-index: 40;
 }
