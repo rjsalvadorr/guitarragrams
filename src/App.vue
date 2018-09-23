@@ -3,7 +3,7 @@
     <h1 class="app--title">Guitarragrams</h1>
     <p>
       A visual reference for guitar chord voicings,
-      built and updated by <a href="https://rj-salvador.com">RJ Salvador</a>.
+      built and updated by <a href="http://rj-salvador.com">RJ Salvador</a>.
     </p>
     <PatternGroup :groupData="diagrams.open">
       <p>
