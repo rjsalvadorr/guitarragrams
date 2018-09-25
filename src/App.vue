@@ -10,6 +10,11 @@
         Bacon ipsum dolor amet incididunt sunt kielbasa do turkey pariatur porchetta excepteur fugiat aliquip ea.
       </p>
     </PatternGroup>
+    <PatternGroup :groupData="diagrams.openUpper">
+      <p>
+        Bacon ipsum dolor amet incididunt sunt kielbasa do turkey pariatur porchetta excepteur fugiat aliquip ea.
+      </p>
+    </PatternGroup>
     <PatternGroup :groupData="diagrams.threeString">
       <p>
         Ex voluptate veniam, ham hock salami sirloin aliqua duis nostrud qui.
@@ -20,6 +25,7 @@
 
 <script>
 import PatternGroup from "./components/PatternGroup.vue";
+import chordDiagramsOpenUpper from "./data/chord-diagrams-open-upper.json";
 import chordDiagramsOpen from "./data/chord-diagrams-open.json";
 import chordDiagrams3string from "./data/chord-diagrams-3string.json";
 
@@ -31,6 +37,7 @@ export default {
   data: function() {
     return {
       diagrams: {
+        openUpper: chordDiagramsOpenUpper,
         open: chordDiagramsOpen,
         threeString: chordDiagrams3string
       }
@@ -65,7 +72,7 @@ code {
 @media (min-width: 550px) {
   .app {
     &--title {
-      font-size: 6.0rem;
+      font-size: 6rem;
     }
   }
 }

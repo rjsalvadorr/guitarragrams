@@ -94,14 +94,14 @@ $borderWidth: 3px;
 /* Larger than phablet */
 @media (min-width: 550px) {
   .fretboard-diagram {
-    flex-basis: 50%
+    flex-basis: 50%;
   }
 }
 
 /* Larger than tablet */
 @media (min-width: 750px) {
   .fretboard-diagram {
-    flex-basis: 33%
+    flex-basis: 33%;
   }
 }
 </style>
