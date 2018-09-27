@@ -5,7 +5,7 @@
     <div :class="['fretboard', 'fretboard--' + instrument]">
       <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
         <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
-          <FretboardMarker :markerData="markers" :stringNum="n" :fretNum="m"/>
+          <FretboardMarker :markerData="processedMarkers" :stringNum="n" :fretNum="m"/>
         </div>
       </div>
     </div>
@@ -23,18 +23,50 @@ export default {
   },
   computed: {
     strings: function() {
+      // Default to guitar for now.
       return 6;
     },
+    fretSize: function() {
+      const markers = this.markers;
+      let highestFretNum = 0;
+      for (var i = 0; i < markers.length; i++) {
+        if (markers[i].fret > highestFretNum) {
+          highestFretNum = markers[i].fret;
+        }
+      }
+      return highestFretNum;
+    },
     frets: function() {
-      return 5;
+      const defaultFretNum = 3;
+      const highestFretNum = this.fretSize;
+      let returnFretNum = defaultFretNum;
+
+      if (highestFretNum <= defaultFretNum) {
+        returnFretNum = defaultFretNum;
+      } else {
+        returnFretNum = highestFretNum;
+      }
+
+      return returnFretNum;
+    },
+    processedMarkers: function() {
+      return this.markers.map(function(oldMarker) {
+        const processedFret =
+          this.fretSize === 1 ? oldMarker.fret + 1 : oldMarker.fret;
+        return {
+          degree: oldMarker.degree,
+          string: oldMarker.string,
+          fret: processedFret
+        };
+      }, this);
     },
     markers: function() {
       return this.diagramData.markers.map(function(rawString) {
         const exploded = rawString.split(",");
         return {
           degree: exploded[0],
-          string: exploded[1],
-          fret: exploded[2]
+          string: Number(exploded[1]),
+          fret: Number(exploded[2])
         };
       });
     },

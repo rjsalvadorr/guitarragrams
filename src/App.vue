@@ -63,10 +63,9 @@ code {
 
 .app {
   &--title {
-    font-size: 5.0rem;
+    font-size: 5rem;
   }
 }
-
 
 /* Larger than phablet */
 @media (min-width: 550px) {
