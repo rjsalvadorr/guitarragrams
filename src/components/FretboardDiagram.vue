@@ -37,11 +37,11 @@ export default {
       return highestFretNum;
     },
     frets: function() {
-      const defaultFretNum = 3;
+      const defaultFretNum = 4;
       const highestFretNum = this.fretSize;
       let returnFretNum = defaultFretNum;
 
-      if (highestFretNum <= defaultFretNum) {
+      if (highestFretNum <= 3) {
         returnFretNum = defaultFretNum;
       } else {
         returnFretNum = highestFretNum;
@@ -51,8 +51,14 @@ export default {
     },
     processedMarkers: function() {
       return this.markers.map(function(oldMarker) {
-        const processedFret =
-          this.fretSize === 1 ? oldMarker.fret + 1 : oldMarker.fret;
+        let processedFret = "";
+
+        if (this.fretSize <= 3) {
+          processedFret = oldMarker.fret + 1;
+        } else {
+          processedFret = oldMarker.fret;
+        }
+
         return {
           degree: oldMarker.degree,
           string: oldMarker.string,
