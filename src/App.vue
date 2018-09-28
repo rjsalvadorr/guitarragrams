@@ -5,7 +5,7 @@
       A visual reference for guitar chord voicings,
       built and updated by <a href="http://rj-salvador.com">RJ Salvador</a>.<br>
       Source code <a href="https://github.com/rjsalvadorr/guitarragrams">can be seen here</a>.
-      If you like this kind of nerdy guitar stuff, I have more things <a href="http://www.rj-salvador.com/tags/music/">can be seen here</a>
+      If you like this kind of nerdy guitar stuff, I have more things <a href="http://www.rj-salvador.com/tags/music/">here</a>.
     </p>
     <PatternGroup :groupData="diagrams.open">
       <p>
