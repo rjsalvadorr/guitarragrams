@@ -2,12 +2,19 @@
   <div class="pattern-group">
     <h2 class="pattern-group--label">{{ groupData.patternType }}</h2>
     <slot></slot>
-    <ChordGroup v-for="n in groupData.chordGroups" :key="n.chordQuality + Date.now()" :groupData="n" />
+    <div class="pattern-group--diagrams">
+      <FretboardDiagram
+        instrument="guitar"
+        v-for="n in groupData.diagrams"
+        :key="n.chordQuality + n.inversion + Date.now()"
+        :diagramData="n"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import ChordGroup from "./ChordGroup.vue";
+import FretboardDiagram from "./FretboardDiagram.vue";
 
 export default {
   name: "PatternGroup",
@@ -15,7 +22,7 @@ export default {
     groupData: Object
   },
   components: {
-    ChordGroup
+    FretboardDiagram
   }
 };
 </script>
@@ -32,6 +39,11 @@ export default {
 
   p {
     text-align: center;
+  }
+
+  &--diagrams {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 </style>
