@@ -1,8 +1,9 @@
 <template>
   <div class="fretboard-diagram">
-    <span>{{ label }}</span>
     <slot></slot>
     <div :class="['fretboard', 'fretboard--' + instrument]">
+      <span class="fretboard-diagram--chord-type">{{ diagramData.chordQuality }}</span>
+      <span class="fretboard-diagram--inversion">{{ inversion }}</span>
       <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
         <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
           <FretboardMarker :markerData="processedMarkers" :stringNum="n" :fretNum="m"/>
@@ -76,7 +77,7 @@ export default {
         };
       });
     },
-    label: function() {
+    inversion: function() {
       if (this.diagramData.inversion === "root") {
         return "Root Position";
       } else {
@@ -97,6 +98,23 @@ $borderWidth: 3px;
 
 .fretboard-diagram {
   flex-basis: 100%;
+
+  &--chord-type,
+  &--inversion {
+    text-align: left;
+    display: block;
+    text-transform: capitalize;
+    line-height: 1.1;
+  }
+
+  &--chord-type {
+    font-weight: bold;
+    font-size: 1.75rem;
+  }
+
+  &--inversion {
+    margin-bottom: 0.75rem;
+  }
 }
 
 .fretboard {
