@@ -27,6 +27,11 @@
         Ex voluptate veniam, ham hock salami sirloin aliqua duis nostrud qui.
       </p>
     </PatternGroup>
+    <PatternGroup :groupData="diagrams.melodicLower">
+      <p>
+        These same patterns apply to the bottom 3 strings as well.
+      </p>
+    </PatternGroup>
   </div>
 </template>
 
@@ -36,6 +41,7 @@ import chordDiagramsOpenUpper from "./data/chord-diagrams-open-upper.json";
 import chordDiagramsOpen from "./data/chord-diagrams-open.json";
 import chordDiagrams3string from "./data/melodic-upper.json";
 import melodicMiddle from "./data/melodic-middle.json";
+import melodicLower from "./data/melodic-lower.json";
 
 export default {
   name: "app",
@@ -48,7 +54,8 @@ export default {
         openUpper: chordDiagramsOpenUpper,
         open: chordDiagramsOpen,
         melodicUpper: chordDiagrams3string,
-        melodicMiddle: melodicMiddle
+        melodicMiddle: melodicMiddle,
+        melodicLower: melodicLower
       }
     };
   }

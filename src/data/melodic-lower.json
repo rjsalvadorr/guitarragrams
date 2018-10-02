@@ -1,0 +1,86 @@
+{
+  "patternType": "Melodic Voicings (lower strings)",
+  "diagrams": [
+    {
+      "chordQuality": "major",
+      "inversion": "root",
+      "markers": [
+        "5th,3,1",
+        "3rd,4,3",
+        "root,5,4"
+      ]
+    },
+    {
+      "chordQuality": "major",
+      "inversion": "1st",
+      "markers": [
+        "root,3,1",
+        "5th,4,1",
+        "3rd,5,3"
+      ]
+    },
+    {
+      "chordQuality": "major",
+      "inversion": "2nd",
+      "markers": [
+        "3rd,3,1",
+        "root,4,2",
+        "5th,5,2"
+      ]
+    },
+    {
+      "chordQuality": "minor",
+      "inversion": "root",
+      "markers": [
+        "5th,3,1",
+        "3rd,4,2",
+        "root,5,4"
+      ]
+    },
+    {
+      "chordQuality": "minor",
+      "inversion": "1st",
+      "markers": [
+        "root,3,1",
+        "5th,4,1",
+        "3rd,5,2"
+      ]
+    },
+    {
+      "chordQuality": "minor",
+      "inversion": "2nd",
+      "markers": [
+        "3rd,3,1",
+        "root,4,3",
+        "5th,5,3"
+      ]
+    },
+    {
+      "chordQuality": "diminished",
+      "inversion": "root",
+      "markers": [
+        "5th,3,1",
+        "3rd,4,3",
+        "root,5,5"
+      ]
+    },
+    {
+      "chordQuality": "diminished",
+      "inversion": "1st",
+      "markers": [
+        "root,3,2",
+        "5th,4,1",
+        "3rd,5,3"
+      ]
+    },
+    {
+      "chordQuality": "diminished",
+      "inversion": "2nd",
+      "markers": [
+        "3rd,3,1",
+        "root,4,3",
+        "5th,5,2"
+      ]
+    }
+  ]
+}
