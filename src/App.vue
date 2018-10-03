@@ -36,28 +36,28 @@
     <Slide>
       <div class="rj-menu--wrapper">
         <h2>Legend</h2>
-        <div class="legend-row">
+        <div class="legend-row legend-row--1">
           <div class="legend-unit">
-            <span class="legend-unit--label">Root</span>
-            <div class="legend-unit--icon marker active marker--root" />
+            <span class="legend-unit__label">Root</span>
+            <div class="legend-unit__icon marker active marker--root" />
           </div>
           <div class="legend-unit">
-            <span class="legend-unit--label">3rd</span>
-            <div class="legend-unit--icon marker active marker--3rd" />
+            <span class="legend-unit__label">3rd</span>
+            <div class="legend-unit__icon marker active marker--3rd" />
           </div>
           <div class="legend-unit">
-            <span class="legend-unit--label">5th</span>
-            <div class="legend-unit--icon marker active marker--5th" />
+            <span class="legend-unit__label">5th</span>
+            <div class="legend-unit__icon marker active marker--5th" />
           </div>
         </div>
-        <div class="legend-row">
+        <div class="legend-row legend-row--2">
           <div class="legend-unit">
-            <span class="legend-unit--label">7th</span>
-            <div class="legend-unit--icon marker active marker--7th" />
+            <span class="legend-unit__label">7th</span>
+            <div class="legend-unit__icon marker active marker--7th" />
           </div>
           <div class="legend-unit">
-            <span class="legend-unit--label">9th</span>
-            <div class="legend-unit--icon marker active marker--9th" />
+            <span class="legend-unit__label">9th</span>
+            <div class="legend-unit__icon marker active marker--9th" />
           </div>
         </div>
         <h2>Help</h2>
@@ -161,6 +161,21 @@ code {
     display: block;
     box-sizing: border-box;
     color: #FFFFFF;
+  }
+
+  .legend-row {
+    display: flex;
+
+    .legend-unit {
+      flex-basis: 33%;
+    }
+
+    .legend-unit__label {
+      display: block;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
   }
 }
 
