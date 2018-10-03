@@ -27,8 +27,8 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<!-- Not scoped, so the CSS is shared with other components -->
+<style lang="scss">
 $fretUnit: 25px;
 $markerDiameter: $fretUnit * 0.66;
 $borderWidth: 3px;
@@ -50,7 +50,7 @@ $borderWidth: 3px;
   }
 
   &--3rd {
-    background: #cccccc;
+    background: #aaaaaa;
   }
 
   &--5th {

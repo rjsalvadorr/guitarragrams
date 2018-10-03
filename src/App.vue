@@ -34,9 +34,34 @@
     </PatternGroup>
 
     <Slide>
-      <div class="rj-menu-wrapper">
+      <div class="rj-menu--wrapper">
+        <h2>Legend</h2>
+        <div class="legend-row">
+          <div class="legend-unit">
+            <span class="legend-unit--label">Root</span>
+            <div class="legend-unit--icon marker active marker--root" />
+          </div>
+          <div class="legend-unit">
+            <span class="legend-unit--label">3rd</span>
+            <div class="legend-unit--icon marker active marker--3rd" />
+          </div>
+          <div class="legend-unit">
+            <span class="legend-unit--label">5th</span>
+            <div class="legend-unit--icon marker active marker--5th" />
+          </div>
+        </div>
+        <div class="legend-row">
+          <div class="legend-unit">
+            <span class="legend-unit--label">7th</span>
+            <div class="legend-unit--icon marker active marker--7th" />
+          </div>
+          <div class="legend-unit">
+            <span class="legend-unit--label">9th</span>
+            <div class="legend-unit--icon marker active marker--9th" />
+          </div>
+        </div>
         <h2>Help</h2>
-        <p>Tail swine culpa spare ribs cupim consectetur ut. Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin. Dolore ut beef cow buffalo kielbasa dolor corned beef consectetur sint.</p>
+        <p>Tail swine culpa spare ribs cupim consectetur ut. Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.</p>
       </div>
     </Slide>
   </div>
@@ -46,6 +71,8 @@
 import { Slide } from 'vue-burger-menu'
 
 import PatternGroup from "./components/PatternGroup.vue";
+import FretboardMarker from "./components/FretboardMarker.vue";
+
 import chordDiagramsOpenUpper from "./data/chord-diagrams-open-upper.json";
 import chordDiagramsOpen from "./data/chord-diagrams-open.json";
 import chordDiagrams3string from "./data/melodic-upper.json";
@@ -55,8 +82,9 @@ import melodicLower from "./data/melodic-lower.json";
 export default {
   name: "app",
   components: {
+    Slide,
     PatternGroup,
-    Slide
+    FretboardMarker
   },
   data: function() {
     return {
@@ -128,7 +156,7 @@ code {
     }
   }
 
-  .rj-menu-wrapper {
+  .rj-menu--wrapper {
     width: 300px;
     display: block;
     box-sizing: border-box;
