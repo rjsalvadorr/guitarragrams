@@ -32,10 +32,19 @@
         These same patterns apply to the bottom 3 strings as well.
       </p>
     </PatternGroup>
+
+    <Slide>
+      <div class="rj-menu-wrapper">
+        <h2>Help</h2>
+        <p>Tail swine culpa spare ribs cupim consectetur ut. Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin. Dolore ut beef cow buffalo kielbasa dolor corned beef consectetur sint.</p>
+      </div>
+    </Slide>
   </div>
 </template>
 
 <script>
+import { Slide } from 'vue-burger-menu'
+
 import PatternGroup from "./components/PatternGroup.vue";
 import chordDiagramsOpenUpper from "./data/chord-diagrams-open-upper.json";
 import chordDiagramsOpen from "./data/chord-diagrams-open.json";
@@ -46,7 +55,8 @@ import melodicLower from "./data/melodic-lower.json";
 export default {
   name: "app",
   components: {
-    PatternGroup
+    PatternGroup,
+    Slide
   },
   data: function() {
     return {
@@ -80,6 +90,49 @@ code {
 .app {
   &--title {
     font-size: 5rem;
+  }
+
+  .bm-burger-button {
+    position: fixed;
+    top: calc(50% - 100px);
+    left: 0;
+    background-color: rgb(63, 63, 65);
+    height: auto;
+    width: auto;
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    &::after {
+      content: "\f128";
+      color: #FFFFFF;
+      font-family: FontAwesome;
+      font-size: 40px;
+    }
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.33);
+    z-index: 999;
+  }
+
+  .bm-item-list {
+    margin-left: 0;
+  }
+
+  .bm-burger-bars.line-style {
+    display: none;
+  }
+
+  .cross-style {
+    right: 8px;
+    color: #FFFFFF;
+
+    .bm-cross {
+      background-color: #FFFFFF;
+    }
+  }
+
+  .rj-menu-wrapper {
+    width: 300px;
+    display: block;
+    box-sizing: border-box;
+    color: #FFFFFF;
   }
 }
 
