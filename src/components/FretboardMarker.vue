@@ -56,5 +56,26 @@ $borderWidth: 3px;
   &--5th {
     background: #000000;
   }
+
+  &--7th {
+    background: #aaaaaa;
+  }
+
+  &--9th {
+    background: #ffffff;
+  }
+
+  &--7th::after,
+  &--9th::after {
+    content: "";
+    background: #000000;
+    width: $markerDiameter / 2;
+    height: $markerDiameter / 2;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    top: $markerDiameter / 4;
+    left: $markerDiameter / 4;
+  }
 }
 </style>
