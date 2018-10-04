@@ -32,6 +32,15 @@
         These same patterns apply to the bottom 3 strings as well.
       </p>
     </PatternGroup>
+    <PatternGroup :groupData="diagrams.fourStringLower">
+      <p>Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.</p>
+    </PatternGroup>
+    <PatternGroup :groupData="diagrams.fourStringMiddle">
+      <p>Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.</p>
+    </PatternGroup>
+    <PatternGroup :groupData="diagrams.fourStringUpper">
+      <p>Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.</p>
+    </PatternGroup>
 
     <Slide>
       <div class="rj-menu--wrapper">
@@ -78,6 +87,9 @@ import chordDiagramsOpen from "./data/chord-diagrams-open.json";
 import chordDiagrams3string from "./data/melodic-upper.json";
 import melodicMiddle from "./data/melodic-middle.json";
 import melodicLower from "./data/melodic-lower.json";
+import fourStringLower from "./data/four-string-lower.json";
+import fourStringMiddle from "./data/four-string-middle.json";
+import fourStringUpper from "./data/four-string-upper.json";
 
 export default {
   name: "app",
@@ -93,7 +105,10 @@ export default {
         open: chordDiagramsOpen,
         melodicUpper: chordDiagrams3string,
         melodicMiddle: melodicMiddle,
-        melodicLower: melodicLower
+        melodicLower: melodicLower,
+        fourStringLower: fourStringLower,
+        fourStringMiddle: fourStringMiddle,
+        fourStringUpper: fourStringUpper
       }
     };
   }

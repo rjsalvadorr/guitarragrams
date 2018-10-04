@@ -1,0 +1,86 @@
+{
+  "patternType": "4-string Patterns (upper strings)",
+  "diagrams": [
+    {
+      "chordQuality": "major",
+      "inversion": "root",
+      "markers": [
+        "3rd,1,3",
+        "5th,3,3",
+        "root,4,1"
+      ]
+    },
+    {
+      "chordQuality": "major",
+      "inversion": "1st",
+      "markers": [
+        "5th,1,3",
+        "root,2,1",
+        "3rd,4,2"
+      ]
+    },
+    {
+      "chordQuality": "major",
+      "inversion": "2nd",
+      "markers": [
+        "root,1,4",
+        "3rd,2,1",
+        "5th,4,1"
+      ]
+    },
+    {
+      "chordQuality": "minor",
+      "inversion": "root",
+      "markers": [
+        "3rd,1,2",
+        "5th,3,3",
+        "root,4,1"
+      ]
+    },
+    {
+      "chordQuality": "minor",
+      "inversion": "1st",
+      "markers": [
+        "5th,1,3",
+        "root,2,1",
+        "3rd,4,1"
+      ]
+    },
+    {
+      "chordQuality": "minor",
+      "inversion": "2nd",
+      "markers": [
+        "root,1,4",
+        "3rd,3,4",
+        "5th,4,1"
+      ]
+    },
+    {
+      "chordQuality": "diminished",
+      "inversion": "root",
+      "markers": [
+        "3rd,1,2",
+        "5th,3,2",
+        "root,4,1"
+      ]
+    },
+    {
+      "chordQuality": "diminished",
+      "inversion": "1st",
+      "markers": [
+        "5th,1,2",
+        "root,2,1",
+        "3rd,4,1"
+      ]
+    },
+    {
+      "chordQuality": "diminished",
+      "inversion": "2nd",
+      "markers": [
+        "root,1,5",
+        "3rd,3,5",
+        "5th,4,1"
+      ]
+    }
+  ]
+}
