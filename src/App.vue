@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { Slide } from 'vue-burger-menu'
+import { Slide } from "vue-burger-menu";
 
 import PatternGroup from "./components/PatternGroup.vue";
 import FretboardMarker from "./components/FretboardMarker.vue";
@@ -146,7 +146,7 @@ code {
     border-radius: 0 8px 8px 0;
     &::after {
       content: "\f128";
-      color: #FFFFFF;
+      color: #ffffff;
       font-family: FontAwesome;
       font-size: 40px;
     }
@@ -164,10 +164,10 @@ code {
 
   .cross-style {
     right: 8px;
-    color: #FFFFFF;
+    color: #ffffff;
 
     .bm-cross {
-      background-color: #FFFFFF;
+      background-color: #ffffff;
     }
   }
 
@@ -175,7 +175,7 @@ code {
     width: 300px;
     display: block;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .legend-row {
