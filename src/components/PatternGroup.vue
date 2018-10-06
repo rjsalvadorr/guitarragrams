@@ -1,5 +1,5 @@
 <template>
-  <div class="pattern-group">
+  <div class="pattern-group" :id="customId">
     <h2 class="pattern-group__label">{{ groupData.patternType }}</h2>
     <slot></slot>
     <div class="pattern-group__diagrams">
@@ -19,7 +19,8 @@ import FretboardDiagram from "./FretboardDiagram.vue";
 export default {
   name: "PatternGroup",
   props: {
-    groupData: Object
+    groupData: Object,
+    customId: String
   },
   components: {
     FretboardDiagram
@@ -30,7 +31,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .pattern-group {
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 
   & > p {
     text-align: left;

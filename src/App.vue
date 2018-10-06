@@ -8,96 +8,53 @@
       If you like this kind of nerdy guitar stuff, I have more things <a href="http://www.rj-salvador.com/tags/music/" target="_blank">here</a>.
     </p>
 
-    <PatternGroup :groupData="diagrams.open">
+    <PatternGroup :groupData="diagrams.open" customId="open-voicings">
       <p>
-        Bacon ipsum dolor amet incididunt sunt kielbasa do turkey pariatur porchetta excepteur fugiat aliquip ea.
+        Chord voicings with with plenty of space between the notes.
+        These can be useful for playing on two areas of the fretboard at the same time.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.openUpper">
-      <p>
-        Bacon ipsum dolor amet incididunt sunt kielbasa do turkey pariatur porchetta excepteur fugiat aliquip ea.
-      </p>
-    </PatternGroup>
+    <PatternGroup :groupData="diagrams.openUpper"></PatternGroup>
 
-    <PatternGroup :groupData="diagrams.melodicLower">
-      <p>
-        These same patterns apply to the bottom 3 strings as well.
-      </p>
-    </PatternGroup>
-    <PatternGroup :groupData="diagrams.melodicMiddle">
-      <p>
-        Ex voluptate veniam, ham hock salami sirloin aliqua duis nostrud qui.
-      </p>
-    </PatternGroup>
-    <PatternGroup :groupData="diagrams.melodicUpper">
-      <p>
-        Ex voluptate veniam, ham hock salami sirloin aliqua duis nostrud qui.
-      </p>
-    </PatternGroup>
+    <hr>
 
-    <PatternGroup :groupData="diagrams.fourStringLower">
+    <PatternGroup :groupData="diagrams.melodicLower" customId="melodic-voicings">
+      <p>
+        These voicings are useful for adding harmony
+        to a melodic passage. Technically, they're also efficient.
+        Your fretting hand can form these chord shapes
+        quickly, and you can move through most chords while barely
+        moving your hand around the neck.
+      </p>
+    </PatternGroup>
+    <PatternGroup :groupData="diagrams.melodicMiddle"></PatternGroup>
+    <PatternGroup :groupData="diagrams.melodicUpper"></PatternGroup>
+
+    <hr>
+
+    <PatternGroup :groupData="diagrams.fourStringLower" customId="four-string-patterns">
       <p>
         Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.fourStringMiddle">
-      <p>
-        Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
-      </p>
-    </PatternGroup>
-    <PatternGroup :groupData="diagrams.fourStringUpper">
-      <p>
-        Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
-      </p>
-    </PatternGroup>
+    <PatternGroup :groupData="diagrams.fourStringMiddle"></PatternGroup>
+    <PatternGroup :groupData="diagrams.fourStringUpper"></PatternGroup>
 
-    <PatternGroup :groupData="diagrams.seventhsLower">
+    <hr>
+
+    <PatternGroup :groupData="diagrams.seventhsLower" customId="seventh-chord-patterns">
       <p>
         Shoulder short ribs excepteur boudin anim ham hock andouille. Jowl culpa ball tip nostrud alcatra pork chop.
      </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.seventhsMiddle">
-      <p>
-        Beef fatback aliquip, pork nulla irure exercitation dolore nisi strip steak. Ball tip bacon alcatra, bresaola ham hock pork loin tempor hamburger deserunt turkey aute cow jowl.
-     </p>
-    </PatternGroup>
-    <PatternGroup :groupData="diagrams.seventhsUpper">
-      <p>
-        Spare ribs proident kielbasa ex, consequat commodo corned beef fatback. Shankle aute laboris pig shank nulla ullamco brisket spare ribs, pork chop eu non.
-     </p>
-    </PatternGroup>
+    <PatternGroup :groupData="diagrams.seventhsMiddle"></PatternGroup>
+    <PatternGroup :groupData="diagrams.seventhsUpper"></PatternGroup>
 
     <Slide
       @openMenu="handleOpenMenu"
       @closeMenu="handleCloseMenu"
     >
-      <div class="rj-menu--wrapper">
-        <h2>Legend</h2>
-        <div class="legend-row legend-row--1">
-          <div class="legend-unit">
-            <span class="legend-unit__label">Root</span>
-            <div class="legend-unit__icon marker active marker--root" />
-          </div>
-          <div class="legend-unit">
-            <span class="legend-unit__label">3rd</span>
-            <div class="legend-unit__icon marker active marker--3rd" />
-          </div>
-          <div class="legend-unit">
-            <span class="legend-unit__label">5th</span>
-            <div class="legend-unit__icon marker active marker--5th" />
-          </div>
-        </div>
-        <div class="legend-row legend-row--2">
-          <div class="legend-unit">
-            <span class="legend-unit__label">7th</span>
-            <div class="legend-unit__icon marker active marker--7th" />
-          </div>
-          <div class="legend-unit">
-            <span class="legend-unit__label">9th</span>
-            <div class="legend-unit__icon marker active marker--9th" />
-          </div>
-        </div>
-      </div>
+      <DrawerPanel />
     </Slide>
   </div>
 </template>
@@ -107,6 +64,7 @@ import { Slide } from "vue-burger-menu";
 
 import PatternGroup from "./components/PatternGroup.vue";
 import FretboardMarker from "./components/FretboardMarker.vue";
+import DrawerPanel from "./components/DrawerPanel.vue";
 
 import chordDiagramsOpenUpper from "./data/chord-diagrams-open-upper.json";
 import chordDiagramsOpen from "./data/chord-diagrams-open.json";
@@ -125,7 +83,8 @@ export default {
   components: {
     Slide,
     PatternGroup,
-    FretboardMarker
+    FretboardMarker,
+    DrawerPanel
   },
   data: function() {
     return {
@@ -160,12 +119,13 @@ export default {
 <style lang="scss">
 $box-shadow-color: rgba(0, 0, 0, 0.5);
 $mui-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.38), 0 6px 6px rgba(0, 0, 0, 0.46);
+$main-color: #2c3e50;
 
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $main-color;
   margin-top: 60px;
 }
 
@@ -175,14 +135,19 @@ code {
 }
 
 .app {
-  &__description {
-    margin-bottom: 4rem;
+  hr {
+    margin: 0 20px 5rem 20px;
+    border-color: $main-color;
   }
 
   &__title,
   &__description {
     text-align: left;
     padding-left: 20px;
+  }
+
+  .bm-menu {
+    padding-top: 3rem;
   }
 
   .bm-menu--open {
@@ -217,37 +182,6 @@ code {
 
   .bm-burger-bars.line-style {
     display: none;
-  }
-
-  .cross-style {
-    right: 8px;
-    color: #ffffff;
-
-    .bm-cross {
-      background-color: #ffffff;
-    }
-  }
-
-  .rj-menu--wrapper {
-    width: 300px;
-    display: block;
-    box-sizing: border-box;
-    color: #ffffff;
-  }
-
-  .legend-row {
-    display: flex;
-
-    .legend-unit {
-      flex-basis: 33%;
-    }
-
-    .legend-unit__label {
-      display: block;
-      text-transform: uppercase;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
   }
 }
 
