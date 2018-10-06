@@ -109,17 +109,18 @@ $borderWidth: 3px;
 
   &--chord-type {
     font-weight: bold;
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   &--inversion {
+    font-size: 1.75rem;
     margin-bottom: 0.75rem;
   }
 }
 
 .fretboard {
   z-index: 10;
-  padding: 10px 20px;
+  padding: 10px 20px 0 20px;
 }
 
 .string {

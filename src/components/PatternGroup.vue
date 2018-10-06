@@ -30,15 +30,18 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .pattern-group {
-  margin-bottom: 4rem;
+  margin-bottom: 7rem;
 
-  &--label {
-    text-align: center;
-    margin-bottom: 1rem;
+  & > p {
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 0.5rem;
   }
 
-  p {
-    text-align: center;
+  &--label {
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 0.5rem;
   }
 
   &--diagrams {

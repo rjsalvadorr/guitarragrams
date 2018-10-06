@@ -1,12 +1,13 @@
 <template>
   <div id="app" class="app">
-    <h1 class="app--title">Guitarragrams</h1>
-    <p>
+    <h1 class="app__title">Guitarragrams</h1>
+    <p class="app__description">
       A visual reference for guitar chord voicings,
       built and updated by <a href="http://rj-salvador.com" target="_blank">RJ Salvador</a>.<br>
       Source code <a href="https://github.com/rjsalvadorr/guitarragrams" target="_blank">can be seen here</a>.
       If you like this kind of nerdy guitar stuff, I have more things <a href="http://www.rj-salvador.com/tags/music/" target="_blank">here</a>.
     </p>
+
     <PatternGroup :groupData="diagrams.open">
       <p>
         Bacon ipsum dolor amet incididunt sunt kielbasa do turkey pariatur porchetta excepteur fugiat aliquip ea.
@@ -17,9 +18,10 @@
         Bacon ipsum dolor amet incididunt sunt kielbasa do turkey pariatur porchetta excepteur fugiat aliquip ea.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.melodicUpper">
+
+    <PatternGroup :groupData="diagrams.melodicLower">
       <p>
-        Ex voluptate veniam, ham hock salami sirloin aliqua duis nostrud qui.
+        These same patterns apply to the bottom 3 strings as well.
       </p>
     </PatternGroup>
     <PatternGroup :groupData="diagrams.melodicMiddle">
@@ -27,19 +29,42 @@
         Ex voluptate veniam, ham hock salami sirloin aliqua duis nostrud qui.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.melodicLower">
+    <PatternGroup :groupData="diagrams.melodicUpper">
       <p>
-        These same patterns apply to the bottom 3 strings as well.
+        Ex voluptate veniam, ham hock salami sirloin aliqua duis nostrud qui.
       </p>
     </PatternGroup>
+
     <PatternGroup :groupData="diagrams.fourStringLower">
-      <p>Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.</p>
+      <p>
+        Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
+      </p>
     </PatternGroup>
     <PatternGroup :groupData="diagrams.fourStringMiddle">
-      <p>Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.</p>
+      <p>
+        Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
+      </p>
     </PatternGroup>
     <PatternGroup :groupData="diagrams.fourStringUpper">
-      <p>Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.</p>
+      <p>
+        Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
+      </p>
+    </PatternGroup>
+
+    <PatternGroup :groupData="diagrams.seventhsLower">
+      <p>
+        Shoulder short ribs excepteur boudin anim ham hock andouille. Jowl culpa ball tip nostrud alcatra pork chop.
+     </p>
+    </PatternGroup>
+    <PatternGroup :groupData="diagrams.seventhsMiddle">
+      <p>
+        Beef fatback aliquip, pork nulla irure exercitation dolore nisi strip steak. Ball tip bacon alcatra, bresaola ham hock pork loin tempor hamburger deserunt turkey aute cow jowl.
+     </p>
+    </PatternGroup>
+    <PatternGroup :groupData="diagrams.seventhsUpper">
+      <p>
+        Spare ribs proident kielbasa ex, consequat commodo corned beef fatback. Shankle aute laboris pig shank nulla ullamco brisket spare ribs, pork chop eu non.
+     </p>
     </PatternGroup>
 
     <Slide
@@ -91,6 +116,10 @@ import melodicLower from "./data/melodic-lower.json";
 import fourStringLower from "./data/four-string-lower.json";
 import fourStringMiddle from "./data/four-string-middle.json";
 import fourStringUpper from "./data/four-string-upper.json";
+import seventhsLower from "./data/7ths-lower.json";
+import seventhsMiddle from "./data/7ths-middle.json";
+import seventhsUpper from "./data/7ths-upper.json";
+
 
 export default {
   name: "app",
@@ -109,7 +138,10 @@ export default {
         melodicLower: melodicLower,
         fourStringLower: fourStringLower,
         fourStringMiddle: fourStringMiddle,
-        fourStringUpper: fourStringUpper
+        fourStringUpper: fourStringUpper,
+        seventhsLower: seventhsLower,
+        seventhsMiddle: seventhsMiddle,
+        seventhsUpper: seventhsUpper
       }
     };
   },
@@ -145,8 +177,18 @@ code {
 }
 
 .app {
-  &--title {
-    font-size: 5rem;
+  &__title {
+    font-size: 6rem;
+  }
+
+  &__description {
+    margin-bottom: 4rem;
+  }
+
+  &__title,
+  &__description {
+    text-align: left;
+    padding-left: 20px;
   }
 
   .bm-menu--open {

@@ -58,7 +58,7 @@ $borderWidth: 3px;
   }
 
   &--7th {
-    background: #aaaaaa;
+    background: #888888;
   }
 
   &--9th {
