@@ -120,7 +120,6 @@ import seventhsLower from "./data/7ths-lower.json";
 import seventhsMiddle from "./data/7ths-middle.json";
 import seventhsUpper from "./data/7ths-upper.json";
 
-
 export default {
   name: "app",
   components: {
@@ -147,12 +146,12 @@ export default {
   },
   methods: {
     handleOpenMenu: function() {
-      document.querySelector('.bm-menu').classList.add('bm-menu--open');
-      document.querySelector('.bm-menu').classList.remove('bm-menu--closed');
+      document.querySelector(".bm-menu").classList.add("bm-menu--open");
+      document.querySelector(".bm-menu").classList.remove("bm-menu--closed");
     },
     handleCloseMenu: function() {
-      document.querySelector('.bm-menu').classList.add('bm-menu--closed');
-      document.querySelector('.bm-menu').classList.remove('bm-menu--open');
+      document.querySelector(".bm-menu").classList.add("bm-menu--closed");
+      document.querySelector(".bm-menu").classList.remove("bm-menu--open");
     }
   }
 };
@@ -160,7 +159,7 @@ export default {
 
 <style lang="scss">
 $box-shadow-color: rgba(0, 0, 0, 0.5);
-$mui-box-shadow: 0 10px 20px rgba(0,0,0,0.38), 0 6px 6px rgba(0,0,0,0.46);
+$mui-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.38), 0 6px 6px rgba(0, 0, 0, 0.46);
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

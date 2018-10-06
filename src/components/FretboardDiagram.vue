@@ -2,8 +2,8 @@
   <div class="fretboard-diagram">
     <slot></slot>
     <div :class="['fretboard', 'fretboard--' + instrument]">
-      <span class="fretboard-diagram--chord-type">{{ diagramData.chordQuality }}</span>
-      <span class="fretboard-diagram--inversion">{{ inversion }}</span>
+      <span class="fretboard-diagram__chord-type">{{ diagramData.chordQuality }}</span>
+      <span class="fretboard-diagram__inversion">{{ inversion }}</span>
       <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
         <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
           <FretboardMarker :markerData="processedMarkers" :stringNum="n" :fretNum="m"/>
@@ -99,20 +99,20 @@ $borderWidth: 3px;
 .fretboard-diagram {
   flex-basis: 100%;
 
-  &--chord-type,
-  &--inversion {
+  &__chord-type,
+  &__inversion {
     text-align: left;
     display: block;
     text-transform: capitalize;
     line-height: 1.1;
   }
 
-  &--chord-type {
+  &__chord-type {
     font-weight: bold;
     font-size: 2rem;
   }
 
-  &--inversion {
+  &__inversion {
     font-size: 1.75rem;
     margin-bottom: 0.75rem;
   }

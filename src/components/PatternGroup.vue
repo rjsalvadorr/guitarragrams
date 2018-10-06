@@ -1,8 +1,8 @@
 <template>
   <div class="pattern-group">
-    <h2 class="pattern-group--label">{{ groupData.patternType }}</h2>
+    <h2 class="pattern-group__label">{{ groupData.patternType }}</h2>
     <slot></slot>
-    <div class="pattern-group--diagrams">
+    <div class="pattern-group__diagrams">
       <FretboardDiagram
         instrument="guitar"
         v-for="n in groupData.diagrams"
@@ -38,13 +38,13 @@ export default {
     margin-bottom: 0.5rem;
   }
 
-  &--label {
+  &__label {
     text-align: left;
     padding-left: 20px;
     margin-bottom: 0.5rem;
   }
 
-  &--diagrams {
+  &__diagrams {
     display: flex;
     flex-wrap: wrap;
   }
