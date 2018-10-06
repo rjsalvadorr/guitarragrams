@@ -42,7 +42,10 @@
       <p>Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.</p>
     </PatternGroup>
 
-    <Slide>
+    <Slide
+      @openMenu="handleOpenMenu"
+      @closeMenu="handleCloseMenu"
+    >
       <div class="rj-menu--wrapper">
         <h2>Legend</h2>
         <div class="legend-row legend-row--1">
@@ -69,8 +72,6 @@
             <div class="legend-unit__icon marker active marker--9th" />
           </div>
         </div>
-        <h2>Help</h2>
-        <p>Tail swine culpa spare ribs cupim consectetur ut. Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.</p>
       </div>
     </Slide>
   </div>
@@ -111,11 +112,24 @@ export default {
         fourStringUpper: fourStringUpper
       }
     };
+  },
+  methods: {
+    handleOpenMenu: function() {
+      document.querySelector('.bm-menu').classList.add('bm-menu--open');
+      document.querySelector('.bm-menu').classList.remove('bm-menu--closed');
+    },
+    handleCloseMenu: function() {
+      document.querySelector('.bm-menu').classList.add('bm-menu--closed');
+      document.querySelector('.bm-menu').classList.remove('bm-menu--open');
+    }
   }
 };
 </script>
 
 <style lang="scss">
+$box-shadow-color: rgba(0, 0, 0, 0.5);
+$mui-box-shadow: 0 10px 20px rgba(0,0,0,0.38), 0 6px 6px rgba(0,0,0,0.46);
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -135,6 +149,12 @@ code {
     font-size: 5rem;
   }
 
+  .bm-menu--open {
+    border: none;
+    // box-shadow: -1px 0px 5px 5px $box-shadow-color;
+    box-shadow: $mui-box-shadow;
+  }
+
   .bm-burger-button {
     position: fixed;
     top: calc(50% - 100px);
@@ -150,7 +170,8 @@ code {
       font-family: FontAwesome;
       font-size: 40px;
     }
-    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.33);
+    // box-shadow: 2px 2px 10px 1px $box-shadow-color;
+    box-shadow: $mui-box-shadow;
     z-index: 999;
   }
 
