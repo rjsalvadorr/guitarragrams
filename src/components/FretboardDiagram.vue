@@ -155,8 +155,8 @@ $borderWidth: 3px;
   }
 }
 
-/* Larger than tablet */
-@media (min-width: 750px) {
+/* Larger than desktop */
+@media (min-width: 1000px) {
   .fretboard-diagram {
     flex-basis: 33%;
   }

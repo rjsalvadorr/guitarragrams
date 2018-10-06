@@ -162,7 +162,6 @@ $box-shadow-color: rgba(0, 0, 0, 0.5);
 $mui-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.38), 0 6px 6px rgba(0, 0, 0, 0.46);
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -176,10 +175,6 @@ code {
 }
 
 .app {
-  &__title {
-    font-size: 6rem;
-  }
-
   &__description {
     margin-bottom: 4rem;
   }
@@ -259,7 +254,7 @@ code {
 /* Larger than phablet */
 @media (min-width: 550px) {
   .app {
-    &--title {
+    &__title {
       font-size: 6rem;
     }
   }
