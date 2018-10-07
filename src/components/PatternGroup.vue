@@ -34,20 +34,35 @@ export default {
   margin-bottom: 5rem;
 
   & > p {
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
+    padding: 0 0 10px 0;
     margin-bottom: 0.5rem;
   }
 
   &__label {
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
+    padding: 0;
     margin-bottom: 0.5rem;
   }
 
   &__diagrams {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+  .pattern-group {
+    & > p {
+      text-align: left;
+      padding: 0 20px 10px 20px;
+    }
+
+    &__label {
+      text-align: left;
+      padding: 0 20px;
+    }
   }
 }
 </style>

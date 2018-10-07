@@ -120,7 +120,7 @@ $borderWidth: 3px;
 
 .fretboard {
   z-index: 10;
-  padding: 10px 20px 0 20px;
+  padding: 5px 0 0 0;
 }
 
 .string {
@@ -145,6 +145,13 @@ $borderWidth: 3px;
   .string--6 .fret {
     border-left: none;
     border-right: none;
+  }
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+  .fretboard {
+    padding: 10px 20px 0 20px;
   }
 }
 

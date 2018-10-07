@@ -126,7 +126,7 @@ $main-color: #2c3e50;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $main-color;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 pre,
@@ -136,14 +136,14 @@ code {
 
 .app {
   hr {
-    margin: 0 20px 5rem 20px;
+    margin: 0 0 5rem 0;
     border-color: $main-color;
   }
 
   &__title,
   &__description {
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
+    padding: 0;
   }
 
   .bm-menu {
@@ -152,26 +152,24 @@ code {
 
   .bm-menu--open {
     border: none;
-    // box-shadow: -1px 0px 5px 5px $box-shadow-color;
     box-shadow: $mui-box-shadow;
   }
 
   .bm-burger-button {
     position: fixed;
-    top: calc(50% - 100px);
+    top: 0;
     left: 0;
     background-color: rgb(63, 63, 65);
     height: auto;
     width: auto;
-    padding: 15px;
-    border-radius: 0 8px 8px 0;
+    padding: 0 10px;
+    border-radius: 0 0 10px 0;
     &::after {
       content: "\f128";
       color: #ffffff;
       font-family: FontAwesome;
-      font-size: 40px;
+      font-size: 30px;
     }
-    // box-shadow: 2px 2px 10px 1px $box-shadow-color;
     box-shadow: $mui-box-shadow;
     z-index: 999;
   }
@@ -185,11 +183,50 @@ code {
   }
 }
 
+/* Larger than mobile */
+@media (min-width: 400px) {
+  #app {
+    margin-top: 40px;
+  }
+
+  .app {
+    hr {
+      margin: 0 20px 5rem 20px;
+    }
+
+    .bm-burger-button {
+      padding: 2px 10px;
+      &::after {
+        font-size: 35px;
+      }
+    }
+
+    &__title,
+    &__description {
+      text-align: left;
+      padding: 0 20px;
+    }
+  }
+}
+
 /* Larger than phablet */
 @media (min-width: 550px) {
+  #app {
+    margin-top: 60px;
+  }
+
   .app {
     &__title {
       font-size: 6rem;
+    }
+
+    .bm-burger-button {
+      top: calc(50% - 100px);
+      border-radius: 0 8px 8px 0;
+      padding: 15px;
+      &::after {
+        font-size: 40px;
+      }
     }
   }
 }
