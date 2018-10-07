@@ -1,12 +1,36 @@
 <template>
   <div id="app" class="app">
     <h1 class="app__title">Guitarragrams</h1>
-    <p class="app__description">
-      A visual reference for guitar chord voicings,
-      built and updated by <a href="http://rj-salvador.com" target="_blank">RJ Salvador</a>.<br>
-      Source code <a href="https://github.com/rjsalvadorr/guitarragrams" target="_blank">can be seen here</a>.
-      If you like this kind of nerdy guitar stuff, I have more things <a href="http://www.rj-salvador.com/tags/music/" target="_blank">here</a>.
-    </p>
+    <div class="row app__intro">
+      <div class="five columns">
+        <p class="app__description">
+          A visual reference for guitar chord voicings,
+          built and updated by <a href="http://rj-salvador.com" target="_blank">RJ Salvador</a>.
+          Source code <a href="https://github.com/rjsalvadorr/guitarragrams" target="_blank">can be seen here</a>.
+          If you like this kind of nerdy guitar stuff, I have more things <a href="http://www.rj-salvador.com/tags/music/" target="_blank">here</a>.
+        </p>
+      </div>
+      <div class="seven columns">
+        <ul class="app__notes">
+          <li>
+            <span>
+              Click the help tab to see the table of contents and legend.
+            </span>
+          </li>
+          <li>
+            <span>
+              The chord diagrams are only for standard tuning (for now).
+            </span>
+          </li>
+          <li>
+            <span>
+              No open strings are used here.
+              These chord patterns are meant to be usable on any position on the fretboard.
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <PatternGroup :groupData="diagrams.open" customId="open-voicings">
       <p class="pattern-group__description">
@@ -140,9 +164,18 @@ code {
     border-color: $main-color;
   }
 
-  &__title,
-  &__description {
+  &__title {
     text-align: center;
+  }
+
+  &__description,
+  &__notes {
+    text-align: left;
+  }
+
+  &__title,
+  &__description,
+  &__notes {
     padding: 0;
   }
 
@@ -202,9 +235,13 @@ code {
     }
 
     &__title,
-    &__description {
-      text-align: left;
+    &__description,
+    &__notes {
       padding: 0 20px;
+    }
+
+    &__title {
+      text-align: left;
     }
   }
 }
@@ -216,6 +253,10 @@ code {
   }
 
   .app {
+    &__intro {
+      margin-bottom: 20px;
+    }
+
     &__title {
       font-size: 6rem;
     }
