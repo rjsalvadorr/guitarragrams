@@ -9,7 +9,7 @@
     </p>
 
     <PatternGroup :groupData="diagrams.open" customId="open-voicings">
-      <p>
+      <p class="pattern-group__description">
         Chord voicings with with plenty of space between the notes.
         These can be useful for playing on two areas of the fretboard at the same time.
       </p>
@@ -19,7 +19,7 @@
     <hr>
 
     <PatternGroup :groupData="diagrams.melodicLower" customId="melodic-voicings">
-      <p>
+      <p class="pattern-group__description">
         These voicings are useful for adding harmony
         to a melodic passage. Technically, they're also efficient.
         Your fretting hand can form these chord shapes
@@ -33,7 +33,7 @@
     <hr>
 
     <PatternGroup :groupData="diagrams.fourStringLower" customId="four-string-patterns">
-      <p>
+      <p class="pattern-group__description">
         Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
       </p>
     </PatternGroup>
@@ -43,7 +43,7 @@
     <hr>
 
     <PatternGroup :groupData="diagrams.seventhsLower" customId="seventh-chord-patterns">
-      <p>
+      <p class="pattern-group__description">
         Shoulder short ribs excepteur boudin anim ham hock andouille. Jowl culpa ball tip nostrud alcatra pork chop.
      </p>
     </PatternGroup>
