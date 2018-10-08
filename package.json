@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "start": "npm run build && npm run serve",
+    "serve": "vue-cli-service lint && vue-cli-service serve",
+    "build": "vue-cli-service lint && vue-cli-service build",
+    "start": "npm run serve",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

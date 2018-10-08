@@ -6,7 +6,7 @@
         <p class="app__description">
           A visual reference for guitar chord voicings,
           built and updated by <a href="http://rj-salvador.com" target="_blank">RJ Salvador</a>.
-          Source code <a href="https://github.com/rjsalvadorr/guitarragrams" target="_blank">can be seen here</a>.
+          Source code can be seen at <a href="https://github.com/rjsalvadorr/guitarragrams" target="_blank">GitHub</a>.
           If you like this kind of nerdy guitar stuff, I have more things <a href="http://www.rj-salvador.com/tags/music/" target="_blank">here</a>.
         </p>
       </div>
@@ -14,7 +14,7 @@
         <ul class="app__notes">
           <li>
             <span>
-              Click the help tab to see the table of contents and legend.
+              Click the help tab (on the left) to see the table of contents and legend.
             </span>
           </li>
           <li>
@@ -26,6 +26,11 @@
             <span>
               No open strings are used here.
               These chord patterns are meant to be usable on any position on the fretboard.
+            </span>
+          </li>
+          <li>
+            <span>
+              Planned features: chord playback, diagram filtering/sorting, left-hand mode, alternate tunings.
             </span>
           </li>
         </ul>
@@ -76,18 +81,11 @@
 
     <hr>
 
-    <Slide
-      @openMenu="handleOpenMenu"
-      @closeMenu="handleCloseMenu"
-    >
-      <DrawerPanel />
-    </Slide>
+    <DrawerPanel />
   </div>
 </template>
 
 <script>
-import { Slide } from "vue-burger-menu";
-
 import PatternGroup from "./components/PatternGroup.vue";
 import FretboardMarker from "./components/FretboardMarker.vue";
 import DrawerPanel from "./components/DrawerPanel.vue";
@@ -107,7 +105,6 @@ import seventhsUpper from "./data/7ths-upper.json";
 export default {
   name: "app",
   components: {
-    Slide,
     PatternGroup,
     FretboardMarker,
     DrawerPanel
@@ -128,16 +125,6 @@ export default {
         seventhsUpper: seventhsUpper
       }
     };
-  },
-  methods: {
-    handleOpenMenu: function() {
-      document.querySelector(".bm-menu").classList.add("bm-menu--open");
-      document.querySelector(".bm-menu").classList.remove("bm-menu--closed");
-    },
-    handleCloseMenu: function() {
-      document.querySelector(".bm-menu").classList.add("bm-menu--closed");
-      document.querySelector(".bm-menu").classList.remove("bm-menu--open");
-    }
   }
 };
 </script>
