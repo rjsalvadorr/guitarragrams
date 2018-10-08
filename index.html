@@ -2,30 +2,10 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-126977033-2');</script><link href=css/app.bc9251e7.css rel=preload as=style><link href=js/app.f8f2270c.js rel=preload as=script><link href=js/chunk-vendors.dd53f924.js rel=preload as=script><link href=css/app.bc9251e7.css rel=stylesheet></head><body><noscript><strong>We're sorry but guitarragrams doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div class=container><div class=row><div class=column><div id=app></div></div></div></div><script src=js/dom-to-image.min.js></script><script>function setLilypondMode() {
+    gtag('config', 'UA-126977033-2');</script><link href=css/chunk-common.bd3fbb1d.css rel=preload as=style><link href=js/chunk-common.780248b6.js rel=preload as=script><link href=js/chunk-vendors.dd53f924.js rel=preload as=script><link href=js/index.8e077cb6.js rel=preload as=script><link href=css/chunk-common.bd3fbb1d.css rel=stylesheet></head><body><noscript><strong>We're sorry but guitarragrams doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div class=container><div class=row><div class=column><div id=app></div></div></div></div><script>function setLilypondMode() {
       document.body.classList.add("body--lilypond");
     }
 
     function resetMode() {
       document.body.classList.remove("body--lilypond");
-    }
-
-    function createDiagramImagesForLilypond() {
-      setLilypondMode();
-      createDiagramImages();
-      resetMode();
-    }
-
-    function createDiagramImages() {
-      var nodes = document.querySelectorAll('.pattern-group');
-
-      nodes.forEach(function(node) {
-        domtoimage.toPng(node).then(function (dataUrl) {
-            var img = new Image();
-            img.src = dataUrl;
-            document.body.appendChild(img);
-        }).catch(function (error) {
-            console.error('oops, something went wrong!', error);
-        });
-      });
-    }</script><script src=js/chunk-vendors.dd53f924.js></script><script src=js/app.f8f2270c.js></script></body></html>
+    }</script><script src=js/chunk-vendors.dd53f924.js></script><script src=js/chunk-common.780248b6.js></script><script src=js/index.8e077cb6.js></script></body></html>
