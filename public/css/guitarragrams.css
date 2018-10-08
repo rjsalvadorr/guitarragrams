@@ -49,3 +49,7 @@ body.body--lilypond h6 {
 body.body--lilypond .pattern-group .pattern-group__description {
   display: none;
 }
+
+body.body--lilypond .pattern-group {
+  background-color: #ffffff;
+}
