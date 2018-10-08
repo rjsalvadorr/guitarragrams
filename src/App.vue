@@ -74,6 +74,8 @@
     <PatternGroup :groupData="diagrams.seventhsMiddle"></PatternGroup>
     <PatternGroup :groupData="diagrams.seventhsUpper"></PatternGroup>
 
+    <hr>
+
     <Slide
       @openMenu="handleOpenMenu"
       @closeMenu="handleCloseMenu"

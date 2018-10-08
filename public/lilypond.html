@@ -15,27 +15,17 @@
 
   <!-- FONT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600|Libre+Baskerville:400,700" rel="stylesheet" type="text/css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
 
   <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/guitarragrams.css">
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126977033-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-126977033-2');
-  </script>
 </head>
 
-<body>
+<body class="body--lilypond">
   <noscript>
     <strong>We're sorry but guitarragrams doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
   </noscript>
@@ -44,18 +34,28 @@
       <div class="column">
         <div id="app"></div>
         <!-- built files will be auto injected -->
+        <button class="btn-generate-diagrams button-primary">Generate diagram images</button>
       </div>
     </div>
   </div>
-  
+
+  <script src="js/dom-to-image.min.js"></script>
   <script>
-    function setLilypondMode() {
-      document.body.classList.add("body--lilypond");
+    function createDiagramImages() {
+      var nodes = document.querySelectorAll('.pattern-group');
+
+      nodes.forEach(function(node) {
+        domtoimage.toPng(node).then(function (dataUrl) {
+            var img = new Image();
+            img.src = dataUrl;
+            document.body.appendChild(img);
+        }).catch(function (error) {
+            console.error('oops, something went wrong!', error);
+        });
+      });
     }
 
-    function resetMode() {
-      document.body.classList.remove("body--lilypond");
-    }
+    document.querySelector('.btn-generate-diagrams').onclick=function(){ createDiagramImages() };
   </script>
 </body>
 
