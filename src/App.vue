@@ -81,11 +81,18 @@
 
     <hr>
 
-    <DrawerPanel />
+    <Slide
+      @openMenu="handleOpenMenu"
+      @closeMenu="handleCloseMenu"
+    >
+      <DrawerPanel />
+    </Slide>
   </div>
 </template>
 
 <script>
+import { Slide } from "vue-burger-menu";
+
 import PatternGroup from "./components/PatternGroup.vue";
 import FretboardMarker from "./components/FretboardMarker.vue";
 import DrawerPanel from "./components/DrawerPanel.vue";
@@ -105,6 +112,7 @@ import seventhsUpper from "./data/7ths-upper.json";
 export default {
   name: "app",
   components: {
+    Slide,
     PatternGroup,
     FretboardMarker,
     DrawerPanel
@@ -125,6 +133,16 @@ export default {
         seventhsUpper: seventhsUpper
       }
     };
+  },
+  methods: {
+    handleOpenMenu: function() {
+      document.querySelector(".bm-menu").classList.add("bm-menu--open");
+      document.querySelector(".bm-menu").classList.remove("bm-menu--closed");
+    },
+    handleCloseMenu: function() {
+      document.querySelector(".bm-menu").classList.add("bm-menu--closed");
+      document.querySelector(".bm-menu").classList.remove("bm-menu--open");
+    }
   }
 };
 </script>
@@ -177,6 +195,16 @@ code {
     box-shadow: $mui-box-shadow;
   }
 
+  .cross-style {
+    right: 10px;
+    color: #ffffff;
+
+    .bm-cross {
+      height: 20px !important;
+      background-color: #ffffff !important;
+    }
+  }
+
   .bm-burger-button {
     position: fixed;
     top: 0;
@@ -195,61 +223,50 @@ code {
     box-shadow: $mui-box-shadow;
     z-index: 999;
   }
-
   .bm-item-list {
     margin-left: 0;
   }
-
   .bm-burger-bars.line-style {
     display: none;
   }
 }
-
 /* Larger than mobile */
 @media (min-width: 400px) {
   #app {
     margin-top: 40px;
   }
-
   .app {
     hr {
       margin: 0 20px 5rem 20px;
     }
-
     .bm-burger-button {
       padding: 2px 10px;
       &::after {
         font-size: 35px;
       }
     }
-
     &__title,
     &__description,
     &__notes {
       padding: 0 20px;
     }
-
     &__title {
       text-align: left;
     }
   }
 }
-
 /* Larger than phablet */
 @media (min-width: 550px) {
   #app {
     margin-top: 60px;
   }
-
   .app {
     &__intro {
       margin-bottom: 20px;
     }
-
     &__title {
       font-size: 6rem;
     }
-
     .bm-burger-button {
       top: calc(50% - 100px);
       border-radius: 0 8px 8px 0;
