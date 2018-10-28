@@ -29,22 +29,22 @@
     <h3 class="rj-menu__heading">Contents</h3>
     <ol class="rj-menu__contents">
       <li>
-        <a class="rj-menu__link" href="#open-voicings">
-          <span>Open voicings</span>
+        <a class="rj-menu__link" href="#five-string">
+          <span>Five-string voicings (open)</span>
         </a>
       </li>
       <li>
-        <a class="rj-menu__link" href="#melodic-voicings">
-          <span>Melodic voicings</span>
+        <a class="rj-menu__link" href="#three-string">
+          <span>Three-string voicings (melodic)</span>
         </a>
       </li>
       <li>
-        <a class="rj-menu__link" href="#four-string-patterns">
+        <a class="rj-menu__link" href="#four-string">
           <span>Four-string patterns</span>
         </a>
       </li>
       <li>
-        <a class="rj-menu__link" href="#seventh-chord-patterns">
+        <a class="rj-menu__link" href="#sevenths">
           <span>7th chord patterns</span>
         </a>
       </li>

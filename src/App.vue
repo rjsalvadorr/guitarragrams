@@ -37,43 +37,45 @@
       </div>
     </div>
 
-    <PatternGroup :groupData="diagrams.open" customId="open-voicings">
+    <PatternGroup :groupData="diagrams.fiveStringMaj" customId="five-string">
       <p class="pattern-group__description">
         Chord voicings with with plenty of space between the notes.
         These can be useful for playing on two areas of the fretboard at the same time.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.openUpper"></PatternGroup>
+    <PatternGroup :groupData="diagrams.fiveStringMin"></PatternGroup>
+    <PatternGroup :groupData="diagrams.fiveStringDim"></PatternGroup>
 
     <hr>
 
-    <PatternGroup :groupData="diagrams.melodicLower" customId="melodic-voicings">
+    <PatternGroup :groupData="diagrams.threeStringMaj" customId="three-string">
       <p class="pattern-group__description">
         These voicings are useful for adding harmony
         to a melodic passage. Technically, they're also efficient.
         Your fretting hand can form these chord shapes
         quickly, and you can move through most chords while barely
-        moving your hand around the neck.
+        moving your hand around the neck.<br>
+        NOTE: the fingering for the A,D,G strings can be used for the E,A,D strings.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.melodicMiddle"></PatternGroup>
-    <PatternGroup :groupData="diagrams.melodicUpper"></PatternGroup>
+    <PatternGroup :groupData="diagrams.threeStringMin"></PatternGroup>
+    <PatternGroup :groupData="diagrams.threeStringDim"></PatternGroup>
 
     <hr>
 
-    <PatternGroup :groupData="diagrams.fourStringLower" customId="four-string-patterns">
+    <PatternGroup :groupData="diagrams.fourStringMaj" customId="four-string">
       <p class="pattern-group__description">
         Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.fourStringMiddle"></PatternGroup>
-    <PatternGroup :groupData="diagrams.fourStringUpper"></PatternGroup>
+    <PatternGroup :groupData="diagrams.fourStringMin"></PatternGroup>
+    <PatternGroup :groupData="diagrams.fourStringDim"></PatternGroup>
 
     <hr>
 
-    <PatternGroup :groupData="diagrams.seventhsMaj" customId="seventh-chord-patterns">
+    <PatternGroup :groupData="diagrams.seventhsMaj" customId="sevenths">
       <p class="pattern-group__description">
-        Shoulder short ribs excepteur boudin anim ham hock andouille. Jowl culpa ball tip nostrud alcatra pork chop.
+        For a lighter sound, don't play the 5th.
      </p>
     </PatternGroup>
     <PatternGroup :groupData="diagrams.seventhsMin"></PatternGroup>
@@ -97,14 +99,15 @@ import PatternGroup from "./components/PatternGroup.vue";
 import FretboardMarker from "./components/FretboardMarker.vue";
 import DrawerPanel from "./components/DrawerPanel.vue";
 
-import chordDiagramsOpenUpper from "./data/chord-diagrams-open-upper.json";
-import chordDiagramsOpen from "./data/chord-diagrams-open.json";
-import chordDiagrams3string from "./data/melodic-upper.json";
-import melodicMiddle from "./data/melodic-middle.json";
-import melodicLower from "./data/melodic-lower.json";
-import fourStringLower from "./data/four-string-lower.json";
-import fourStringMiddle from "./data/four-string-middle.json";
-import fourStringUpper from "./data/four-string-upper.json";
+import fiveStringMaj from "./data/five-string-major.json";
+import fiveStringMin from "./data/five-string-minor.json";
+import fiveStringDim from "./data/five-string-diminished.json";
+import threeStringMaj from "./data/three-string-major.json";
+import threeStringMin from "./data/three-string-minor.json";
+import threeStringDim from "./data/three-string-diminished.json";
+import fourStringMaj from "./data/four-string-major.json";
+import fourStringMin from "./data/four-string-minor.json";
+import fourStringDim from "./data/four-string-diminished.json";
 import seventhsMaj from "./data/7ths-major.json";
 import seventhsMin from "./data/7ths-minor.json";
 import seventhsDim from "./data/7ths-diminished.json";
@@ -120,14 +123,15 @@ export default {
   data: function() {
     return {
       diagrams: {
-        openUpper: chordDiagramsOpenUpper,
-        open: chordDiagramsOpen,
-        melodicUpper: chordDiagrams3string,
-        melodicMiddle: melodicMiddle,
-        melodicLower: melodicLower,
-        fourStringLower: fourStringLower,
-        fourStringMiddle: fourStringMiddle,
-        fourStringUpper: fourStringUpper,
+        fiveStringMaj: fiveStringMaj,
+        fiveStringMin: fiveStringMin,
+        fiveStringDim: fiveStringDim,
+        threeStringMaj: threeStringMaj,
+        threeStringMin: threeStringMin,
+        threeStringDim: threeStringDim,
+        fourStringMaj: fourStringMaj,
+        fourStringMin: fourStringMin,
+        fourStringDim: fourStringDim,
         seventhsMaj: seventhsMaj,
         seventhsMin: seventhsMin,
         seventhsDim: seventhsDim
