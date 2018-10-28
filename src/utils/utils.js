@@ -59,7 +59,7 @@ export function buildDiagram(inputDiagram, id) {
 
 function checkDiagram(diagram, options) {
   let blocked = false;
-  const chordTypes = options.chordTypes.split(',');
+  const chordTypes = options.chordTypes.split(",");
   if (
     diagram.fretSpan < options.fretSpanMin ||
     diagram.fretSpan > options.fretSpanMax ||

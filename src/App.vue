@@ -140,12 +140,11 @@ export default {
         seventhsMin,
         seventhsDim
       ],
-      selectedChordType: 'maj,maj7,7,min,m7,dim,m7b5,dim7'
+      selectedChordType: "maj,maj7,7,min,m7,dim,m7b5,dim7"
     };
   },
   computed: {
     diagrams: function() {
-      window.console.log(utils);
       let ctr = 0;
       const outputDiagrams = {};
       for (var i = 0; i < this.inputDiagrams.length; i++) {
@@ -162,12 +161,9 @@ export default {
           ctr++;
         }
       }
-      window.console.log(outputDiagrams);
       return outputDiagrams;
     },
     filteredDiagrams: function() {
-      window.console.log('diagrams filtered!');
-      window.console.log(this.options);
       return {
         FIVE_STRING: utils.filterDiagrams(
           this.diagrams.FIVE_STRING,
@@ -187,7 +183,7 @@ export default {
     diagramLabels: function() {
       return constants.groupLabels;
     },
-    options: function () {
+    options: function() {
       return {
         chordTypes: this.selectedChordType,
         fretSpanMin: 0,
@@ -197,16 +193,13 @@ export default {
       };
     }
   },
-  watch: {
-    selectedChordType: function(newTypes, oldTypes) {
-      console.log('trying to filter again...');
-      console.log(`STATE --> ${this.options.chordTypes}`);
-      console.log(`${oldTypes} --> ${newTypes}`);
-      if(this.options.chordTypes != newTypes) {
-        this.options.chordTypes = this.selectedChordType;
-      }
-    }
-  },
+  // watch: {
+  //   selectedChordType: function(newTypes) {
+  //     if (this.options.chordTypes != newTypes) {
+  //       this.options.chordTypes = this.selectedChordType;
+  //     }
+  //   }
+  // },
   methods: {
     handleOpenMenu: function() {
       document.querySelector(".bm-menu").classList.add("bm-menu--open");
@@ -216,14 +209,6 @@ export default {
       document.querySelector(".bm-menu").classList.add("bm-menu--closed");
       document.querySelector(".bm-menu").classList.remove("bm-menu--open");
     }
-    // filterByChordType: function() {
-    //   console.log('trying to filter...');
-    //   console.log(this.options);
-    //   if(this.options.chordTypes != this.selectedChordType) {
-    //     this.options.chordTypes = this.selectedChordType;
-    //   }
-    //   console.log(this.options);
-    // }
   }
 };
 </script>
