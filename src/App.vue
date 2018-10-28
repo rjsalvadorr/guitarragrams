@@ -71,13 +71,13 @@
 
     <hr>
 
-    <PatternGroup :groupData="diagrams.seventhsLower" customId="seventh-chord-patterns">
+    <PatternGroup :groupData="diagrams.seventhsMaj" customId="seventh-chord-patterns">
       <p class="pattern-group__description">
         Shoulder short ribs excepteur boudin anim ham hock andouille. Jowl culpa ball tip nostrud alcatra pork chop.
      </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.seventhsMiddle"></PatternGroup>
-    <PatternGroup :groupData="diagrams.seventhsUpper"></PatternGroup>
+    <PatternGroup :groupData="diagrams.seventhsMin"></PatternGroup>
+    <PatternGroup :groupData="diagrams.seventhsDim"></PatternGroup>
 
     <hr>
 
@@ -105,9 +105,9 @@ import melodicLower from "./data/melodic-lower.json";
 import fourStringLower from "./data/four-string-lower.json";
 import fourStringMiddle from "./data/four-string-middle.json";
 import fourStringUpper from "./data/four-string-upper.json";
-import seventhsLower from "./data/7ths-lower.json";
-import seventhsMiddle from "./data/7ths-middle.json";
-import seventhsUpper from "./data/7ths-upper.json";
+import seventhsMaj from "./data/7ths-major.json";
+import seventhsMin from "./data/7ths-minor.json";
+import seventhsDim from "./data/7ths-diminished.json";
 
 export default {
   name: "app",
@@ -128,9 +128,9 @@ export default {
         fourStringLower: fourStringLower,
         fourStringMiddle: fourStringMiddle,
         fourStringUpper: fourStringUpper,
-        seventhsLower: seventhsLower,
-        seventhsMiddle: seventhsMiddle,
-        seventhsUpper: seventhsUpper
+        seventhsMaj: seventhsMaj,
+        seventhsMin: seventhsMin,
+        seventhsDim: seventhsDim
       }
     };
   },
