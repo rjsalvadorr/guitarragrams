@@ -56,3 +56,29 @@ export function buildDiagram(inputDiagram, id) {
     bottomNote: getBottomNote(inputDiagram.markers)
   };
 }
+
+function checkDiagram(diagram, options) {
+  let blocked = false;
+  const chordTypes = options.chordTypes.split(',');
+  if (
+    diagram.fretSpan < options.fretSpanMin ||
+    diagram.fretSpan > options.fretSpanMax ||
+    !chordTypes.includes(diagram.chordQuality) ||
+    diagram.stringSpan < options.stringSpanMin ||
+    diagram.stringSpan > options.stringSpanMax
+  ) {
+    blocked = true;
+  }
+  return !blocked;
+}
+
+export function filterDiagrams(inputDiagrams, options) {
+  const outputDiagrams = [];
+  for (var i = 0; i < inputDiagrams.length; i++) {
+    let diagram = inputDiagrams[i];
+    if (checkDiagram(diagram, options)) {
+      outputDiagrams.push(diagram);
+    }
+  }
+  return outputDiagrams;
+}

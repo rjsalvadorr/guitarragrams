@@ -2,7 +2,7 @@
   "patternType": "FOUR_STRING",
   "diagrams": [
     {
-      "chordQuality": "diminished",
+      "chordQuality": "dim",
       "inversion": "root",
       "markers": [
         "3rd,3,1",
@@ -11,7 +11,7 @@
       ]
     },
     {
-      "chordQuality": "diminished",
+      "chordQuality": "dim",
       "inversion": "1st",
       "markers": [
         "5th,3,2",
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "chordQuality": "diminished",
+      "chordQuality": "dim",
       "inversion": "2nd",
       "markers": [
         "root,3,4",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "chordQuality": "diminished",
+      "chordQuality": "dim",
       "inversion": "root",
       "markers": [
         "3rd,2,2",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "chordQuality": "diminished",
+      "chordQuality": "dim",
       "inversion": "1st",
       "markers": [
         "5th,2,3",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "chordQuality": "diminished",
+      "chordQuality": "dim",
       "inversion": "2nd",
       "markers": [
         "root,2,5",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "chordQuality": "diminished",
+      "chordQuality": "dim",
       "inversion": "root",
       "markers": [
         "3rd,1,2",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "chordQuality": "diminished",
+      "chordQuality": "dim",
       "inversion": "1st",
       "markers": [
         "5th,1,2",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "chordQuality": "diminished",
+      "chordQuality": "dim",
       "inversion": "2nd",
       "markers": [
         "root,1,5",

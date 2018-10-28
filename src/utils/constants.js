@@ -1,3 +1,13 @@
+export const chordTypes = [
+  "maj",
+  "maj7",
+  "7",
+  "min",
+  "m7",
+  "dim",
+  "m7b5",
+  "dim7"
+];
 export const groups = ["FIVE_STRING", "THREE_STRING", "FOUR_STRING", "SEVENTH"];
 
 export const groupLabels = {
@@ -12,7 +22,7 @@ export const chordLabels = {
   min: "Minor",
   dim: "Diminished",
   maj7: "Major 7th",
-  min7: "Minor 7th",
+  m7: "Minor 7th",
   "7": "Dominant 7th",
   m7b5: "Half-diminished 7th",
   dim7: "Diminished 7th"

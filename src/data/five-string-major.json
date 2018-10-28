@@ -2,7 +2,7 @@
   "patternType": "FIVE_STRING",
   "diagrams": [
     {
-      "chordQuality": "major",
+      "chordQuality": "maj",
       "inversion": "root",
       "markers": [
         "5th,2,1",
@@ -11,7 +11,7 @@
       ]
     },
     {
-      "chordQuality": "major",
+      "chordQuality": "maj",
       "inversion": "1st",
       "markers": [
         "root,2,2",
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "chordQuality": "major",
+      "chordQuality": "maj",
       "inversion": "2nd",
       "markers": [
         "3rd,2,3",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "chordQuality": "major",
+      "chordQuality": "maj",
       "inversion": "root",
       "markers": [
         "5th,1,1",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "chordQuality": "major",
+      "chordQuality": "maj",
       "inversion": "1st",
       "markers": [
         "root,1,2",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "chordQuality": "major",
+      "chordQuality": "maj",
       "inversion": "2nd",
       "markers": [
         "3rd,1,3",

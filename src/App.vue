@@ -37,7 +37,17 @@
       </div>
     </div>
 
-    <PatternGroup :diagrams="diagrams.FIVE_STRING" :label= "diagramLabels.FIVE_STRING" customId="five-string">
+    <form>
+      <label for="sel-chord-quality">Chord Type</label>
+      <select v-model="selectedChordType" id="sel-chord-quality">
+        <option value="maj,maj7,7,min,m7,dim,m7b5,dim7" selected>All</option>
+        <option value="maj,maj7,7">Major, Dominant</option>
+        <option value="min,m7">Minor</option>
+        <option value="dim,m7b5,dim7">Diminished</option>
+      </select>
+    </form>
+
+    <PatternGroup :diagrams="filteredDiagrams.FIVE_STRING" :label= "diagramLabels.FIVE_STRING" customId="five-string">
       <p class="pattern-group__description">
         Chord voicings with with plenty of space between the notes.
         These can be useful for playing on two areas of the fretboard at the same time.
@@ -46,7 +56,7 @@
 
     <hr>
 
-    <PatternGroup :diagrams="diagrams.THREE_STRING" :label= "diagramLabels.THREE_STRING" customId="three-string">
+    <PatternGroup :diagrams="filteredDiagrams.THREE_STRING" :label= "diagramLabels.THREE_STRING" customId="three-string">
       <p class="pattern-group__description">
         These voicings are useful for adding harmony
         to a melodic passage. Technically, they're also efficient.
@@ -59,7 +69,7 @@
 
     <hr>
 
-    <PatternGroup :diagrams="diagrams.FOUR_STRING" :label= "diagramLabels.FOUR_STRING" customId="four-string">
+    <PatternGroup :diagrams="filteredDiagrams.FOUR_STRING" :label= "diagramLabels.FOUR_STRING" customId="four-string">
       <p class="pattern-group__description">
         Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
       </p>
@@ -67,7 +77,7 @@
 
     <hr>
 
-    <PatternGroup :diagrams="diagrams.SEVENTH" :label= "diagramLabels.SEVENTH" customId="sevenths">
+    <PatternGroup :diagrams="filteredDiagrams.SEVENTH" :label= "diagramLabels.SEVENTH" customId="sevenths">
       <p class="pattern-group__description">
         For a lighter sound, don't play the 5th.
      </p>
@@ -129,7 +139,8 @@ export default {
         seventhsMaj,
         seventhsMin,
         seventhsDim
-      ]
+      ],
+      selectedChordType: 'maj,maj7,7,min,m7,dim,m7b5,dim7'
     };
   },
   computed: {
@@ -154,8 +165,46 @@ export default {
       window.console.log(outputDiagrams);
       return outputDiagrams;
     },
+    filteredDiagrams: function() {
+      window.console.log('diagrams filtered!');
+      window.console.log(this.options);
+      return {
+        FIVE_STRING: utils.filterDiagrams(
+          this.diagrams.FIVE_STRING,
+          this.options
+        ),
+        THREE_STRING: utils.filterDiagrams(
+          this.diagrams.THREE_STRING,
+          this.options
+        ),
+        FOUR_STRING: utils.filterDiagrams(
+          this.diagrams.FOUR_STRING,
+          this.options
+        ),
+        SEVENTH: utils.filterDiagrams(this.diagrams.SEVENTH, this.options)
+      };
+    },
     diagramLabels: function() {
       return constants.groupLabels;
+    },
+    options: function () {
+      return {
+        chordTypes: this.selectedChordType,
+        fretSpanMin: 0,
+        fretSpanMax: 999,
+        stringSpanMin: 0,
+        stringSpanMax: 999
+      };
+    }
+  },
+  watch: {
+    selectedChordType: function(newTypes, oldTypes) {
+      console.log('trying to filter again...');
+      console.log(`STATE --> ${this.options.chordTypes}`);
+      console.log(`${oldTypes} --> ${newTypes}`);
+      if(this.options.chordTypes != newTypes) {
+        this.options.chordTypes = this.selectedChordType;
+      }
     }
   },
   methods: {
@@ -167,6 +216,14 @@ export default {
       document.querySelector(".bm-menu").classList.add("bm-menu--closed");
       document.querySelector(".bm-menu").classList.remove("bm-menu--open");
     }
+    // filterByChordType: function() {
+    //   console.log('trying to filter...');
+    //   console.log(this.options);
+    //   if(this.options.chordTypes != this.selectedChordType) {
+    //     this.options.chordTypes = this.selectedChordType;
+    //   }
+    //   console.log(this.options);
+    // }
   }
 };
 </script>

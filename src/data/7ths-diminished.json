@@ -2,7 +2,7 @@
   "patternType": "SEVENTH",
   "diagrams": [
     {
-      "chordQuality": "half-diminished 7th",
+      "chordQuality": "m7b5",
       "inversion": "root",
       "markers": [
         "3rd,3,1",
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "chordQuality": "half-diminished 7th",
+      "chordQuality": "m7b5",
       "inversion": "root",
       "markers": [
         "3rd,2,2",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "chordQuality": "half-diminished 7th",
+      "chordQuality": "m7b5",
       "inversion": "root",
       "markers": [
         "3rd,1,2",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "chordQuality": "diminished 7th",
+      "chordQuality": "dim7",
       "inversion": "root",
       "markers": [
         "3rd,3,2",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "chordQuality": "diminished 7th",
+      "chordQuality": "dim7",
       "inversion": "root",
       "markers": [
         "3rd,2,3",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "chordQuality": "diminished 7th",
+      "chordQuality": "dim7",
       "inversion": "root",
       "markers": [
         "3rd,1,3",
