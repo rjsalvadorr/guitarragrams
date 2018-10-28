@@ -1,12 +1,12 @@
 <template>
   <div class="pattern-group" :id="customId">
-    <h2 class="pattern-group__label">{{ groupData.patternType }}</h2>
+    <h2 class="pattern-group__label">{{ label }}</h2>
     <slot></slot>
     <div class="pattern-group__diagrams">
       <FretboardDiagram
         instrument="guitar"
-        v-for="n in groupData.diagrams"
-        :key="n.chordQuality + n.inversion + Date.now()"
+        v-for="n in diagrams"
+        :key="n.id"
         :diagramData="n"
       />
     </div>
@@ -19,7 +19,8 @@ import FretboardDiagram from "./FretboardDiagram.vue";
 export default {
   name: "PatternGroup",
   props: {
-    groupData: Object,
+    label: String,
+    diagrams: Array,
     customId: String
   },
   components: {

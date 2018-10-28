@@ -37,18 +37,16 @@
       </div>
     </div>
 
-    <PatternGroup :groupData="diagrams.fiveStringMaj" customId="five-string">
+    <PatternGroup :diagrams="diagrams.FIVE_STRING" :label= "diagramLabels.FIVE_STRING" customId="five-string">
       <p class="pattern-group__description">
         Chord voicings with with plenty of space between the notes.
         These can be useful for playing on two areas of the fretboard at the same time.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.fiveStringMin"></PatternGroup>
-    <PatternGroup :groupData="diagrams.fiveStringDim"></PatternGroup>
 
     <hr>
 
-    <PatternGroup :groupData="diagrams.threeStringMaj" customId="three-string">
+    <PatternGroup :diagrams="diagrams.THREE_STRING" :label= "diagramLabels.THREE_STRING" customId="three-string">
       <p class="pattern-group__description">
         These voicings are useful for adding harmony
         to a melodic passage. Technically, they're also efficient.
@@ -58,28 +56,22 @@
         NOTE: the fingering for the A,D,G strings can be used for the E,A,D strings.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.threeStringMin"></PatternGroup>
-    <PatternGroup :groupData="diagrams.threeStringDim"></PatternGroup>
 
     <hr>
 
-    <PatternGroup :groupData="diagrams.fourStringMaj" customId="four-string">
+    <PatternGroup :diagrams="diagrams.FOUR_STRING" :label= "diagramLabels.FOUR_STRING" customId="four-string">
       <p class="pattern-group__description">
         Eiusmod minim voluptate tempor, picanha sed ball tip. Consequat enim shoulder ut pork loin.
       </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.fourStringMin"></PatternGroup>
-    <PatternGroup :groupData="diagrams.fourStringDim"></PatternGroup>
 
     <hr>
 
-    <PatternGroup :groupData="diagrams.seventhsMaj" customId="sevenths">
+    <PatternGroup :diagrams="diagrams.SEVENTH" :label= "diagramLabels.SEVENTH" customId="sevenths">
       <p class="pattern-group__description">
         For a lighter sound, don't play the 5th.
      </p>
     </PatternGroup>
-    <PatternGroup :groupData="diagrams.seventhsMin"></PatternGroup>
-    <PatternGroup :groupData="diagrams.seventhsDim"></PatternGroup>
 
     <hr>
 
@@ -94,10 +86,8 @@
 
 <script>
 import { Slide } from "vue-burger-menu";
-
-import PatternGroup from "./components/PatternGroup.vue";
-import FretboardMarker from "./components/FretboardMarker.vue";
-import DrawerPanel from "./components/DrawerPanel.vue";
+import * as constants from "./utils/constants";
+import * as utils from "./utils/utils";
 
 import fiveStringMaj from "./data/five-string-major.json";
 import fiveStringMin from "./data/five-string-minor.json";
@@ -112,6 +102,10 @@ import seventhsMaj from "./data/7ths-major.json";
 import seventhsMin from "./data/7ths-minor.json";
 import seventhsDim from "./data/7ths-diminished.json";
 
+import PatternGroup from "./components/PatternGroup.vue";
+import FretboardMarker from "./components/FretboardMarker.vue";
+import DrawerPanel from "./components/DrawerPanel.vue";
+
 export default {
   name: "app",
   components: {
@@ -122,21 +116,47 @@ export default {
   },
   data: function() {
     return {
-      diagrams: {
-        fiveStringMaj: fiveStringMaj,
-        fiveStringMin: fiveStringMin,
-        fiveStringDim: fiveStringDim,
-        threeStringMaj: threeStringMaj,
-        threeStringMin: threeStringMin,
-        threeStringDim: threeStringDim,
-        fourStringMaj: fourStringMaj,
-        fourStringMin: fourStringMin,
-        fourStringDim: fourStringDim,
-        seventhsMaj: seventhsMaj,
-        seventhsMin: seventhsMin,
-        seventhsDim: seventhsDim
-      }
+      inputDiagrams: [
+        fiveStringMaj,
+        fiveStringMin,
+        fiveStringDim,
+        threeStringMaj,
+        threeStringMin,
+        threeStringDim,
+        fourStringMaj,
+        fourStringMin,
+        fourStringDim,
+        seventhsMaj,
+        seventhsMin,
+        seventhsDim
+      ]
     };
+  },
+  computed: {
+    diagrams: function() {
+      window.console.log(utils);
+      let ctr = 0;
+      const outputDiagrams = {};
+      for (var i = 0; i < this.inputDiagrams.length; i++) {
+        let diagramGroup = this.inputDiagrams[i];
+        let patternType = diagramGroup.patternType;
+
+        outputDiagrams[patternType] = outputDiagrams[patternType] || [];
+        for (var j = 0; j < diagramGroup.diagrams.length; j++) {
+          let currentDiagram = utils.buildDiagram(
+            diagramGroup.diagrams[j],
+            ctr
+          );
+          outputDiagrams[patternType].push(currentDiagram);
+          ctr++;
+        }
+      }
+      window.console.log(outputDiagrams);
+      return outputDiagrams;
+    },
+    diagramLabels: function() {
+      return constants.groupLabels;
+    }
   },
   methods: {
     handleOpenMenu: function() {

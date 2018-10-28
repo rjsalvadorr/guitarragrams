@@ -1,5 +1,5 @@
 {
-  "patternType": "Five-string voicings (minor)",
+  "patternType": "FIVE_STRING",
   "diagrams": [
     {
       "chordQuality": "minor",
