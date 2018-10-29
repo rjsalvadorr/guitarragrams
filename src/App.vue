@@ -40,6 +40,7 @@
 
     <div class="filter-controls__wrapper">
       <h2 class="filter-controls__label">Filters</h2>
+      <span class="filter-controls__results">Showing {{ numDiagrams }} diagrams</span>
       <form class="filter-controls">
         <div class="input-group">
           <label for="sel-chord-quality">Chord Type</label>
@@ -199,6 +200,15 @@ export default {
         stringSpanMin: 0,
         stringSpanMax: this.selectedMaxStringSpan
       };
+    },
+    numDiagrams: function() {
+      let totalDiagrams = 0;
+      totalDiagrams += this.filteredDiagrams.FIVE_STRING.length;
+      totalDiagrams += this.filteredDiagrams.THREE_STRING.length;
+      totalDiagrams += this.filteredDiagrams.FOUR_STRING.length;
+      totalDiagrams += this.filteredDiagrams.SEVENTH.length;
+
+      return totalDiagrams;
     }
   },
   methods: {
@@ -297,8 +307,20 @@ code {
     display: none;
   }
 
-  .filter-controls__label {
+  .filter-controls__wrapper {
     text-align: left;
+    margin-bottom: 2rem;
+
+    .filter-controls__results {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 20px;
+    }
+    
+    .filter-controls__label {
+      text-align: left;
+      margin-bottom: 0;
+    }
   }
 
   .input-group {
@@ -341,7 +363,8 @@ code {
       text-align: left;
     }
 
-    .filter-controls__label {
+    .filter-controls__label,
+    .filter-controls__results {
       padding: 0 20px;
     }
 
