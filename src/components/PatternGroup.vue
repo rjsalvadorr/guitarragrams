@@ -1,5 +1,5 @@
 <template>
-  <div class="pattern-group" :id="customId">
+  <div v-if="showGroup" class="pattern-group" :id="customId">
     <h2 class="pattern-group__label">{{ label }}</h2>
     <slot></slot>
     <div class="pattern-group__diagrams">
@@ -10,6 +10,7 @@
         :diagramData="n"
       />
     </div>
+    <hr>
   </div>
 </template>
 
@@ -22,6 +23,11 @@ export default {
     label: String,
     diagrams: Array,
     customId: String
+  },
+  computed: {
+    showGroup: function() {
+      return this.diagrams.length > 0;
+    }
   },
   components: {
     FretboardDiagram

@@ -15,6 +15,7 @@
           <li>
             <span>
               Click the help tab (on the left) to see the table of contents and legend.
+              Use the filters below to find chord shapes by type or size.
             </span>
           </li>
           <li>
@@ -30,22 +31,36 @@
           </li>
           <li>
             <span>
-              Planned features: chord playback, diagram filtering/sorting, left-hand mode, alternate tunings.
+              Planned features: chord playback, left-hand mode, alternate tunings.
             </span>
           </li>
         </ul>
       </div>
     </div>
 
-    <form>
-      <label for="sel-chord-quality">Chord Type</label>
-      <select v-model="selectedChordType" id="sel-chord-quality">
-        <option value="maj,maj7,7,min,m7,dim,m7b5,dim7" selected>All</option>
-        <option value="maj,maj7,7">Major, Dominant</option>
-        <option value="min,m7">Minor</option>
-        <option value="dim,m7b5,dim7">Diminished</option>
-      </select>
-    </form>
+    <div class="filter-controls__wrapper">
+      <h2 class="filter-controls__label">Filters</h2>
+      <form class="filter-controls">
+        <div class="input-group">
+          <label for="sel-chord-quality">Chord Type</label>
+          <select v-model="selectedChordType" id="sel-chord-quality" name="sel-chord-quality">
+            <option value="maj,maj7,7,min,m7,dim,m7b5,dim7" selected>All</option>
+            <option value="maj,maj7,7">Major, Dominant</option>
+            <option value="min,m7">Minor</option>
+            <option value="dim,m7b5,dim7">Diminished</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="sel-max-fret-span">Max. Frets: {{selectedMaxFretSpan}}</label>
+          <input type="range" v-model="selectedMaxFretSpan" id="sel-max-fret-span" name="sel-max-fret-span" min="0" max="6" />
+        </div>
+        <div class="input-group">
+          <label for="sel-max-string-span">Max. Strings: {{selectedMaxStringSpan}}</label>
+          <input type="range" v-model="selectedMaxStringSpan" id="sel-max-string-span" name="sel-max-string-span" min="0" max="6" />
+        </div>
+      </form>
+      <div class="u-cf" />
+    </div>
 
     <PatternGroup :diagrams="filteredDiagrams.FIVE_STRING" :label= "diagramLabels.FIVE_STRING" customId="five-string">
       <p class="pattern-group__description">
@@ -54,20 +69,14 @@
       </p>
     </PatternGroup>
 
-    <hr>
-
     <PatternGroup :diagrams="filteredDiagrams.THREE_STRING" :label= "diagramLabels.THREE_STRING" customId="three-string">
       <p class="pattern-group__description">
-        These voicings are useful for adding harmony
-        to a melodic passage. Technically, they're also efficient.
-        Your fretting hand can form these chord shapes
-        quickly, and you can move through most chords while barely
-        moving your hand around the neck.<br>
+        Useful for adding harmony
+        to a melodic passage. The fretting hand can form these chord shapes
+        quickly while soloing.<br>
         NOTE: the fingering for the A,D,G strings can be used for the E,A,D strings.
       </p>
     </PatternGroup>
-
-    <hr>
 
     <PatternGroup :diagrams="filteredDiagrams.FOUR_STRING" :label= "diagramLabels.FOUR_STRING" customId="four-string">
       <p class="pattern-group__description">
@@ -75,15 +84,11 @@
       </p>
     </PatternGroup>
 
-    <hr>
-
     <PatternGroup :diagrams="filteredDiagrams.SEVENTH" :label= "diagramLabels.SEVENTH" customId="sevenths">
       <p class="pattern-group__description">
         For a lighter sound, don't play the 5th.
      </p>
     </PatternGroup>
-
-    <hr>
 
     <Slide
       @openMenu="handleOpenMenu"
@@ -96,6 +101,7 @@
 
 <script>
 import { Slide } from "vue-burger-menu";
+
 import * as constants from "./utils/constants";
 import * as utils from "./utils/utils";
 
@@ -140,7 +146,9 @@ export default {
         seventhsMin,
         seventhsDim
       ],
-      selectedChordType: "maj,maj7,7,min,m7,dim,m7b5,dim7"
+      selectedChordType: "maj,maj7,7,min,m7,dim,m7b5,dim7",
+      selectedMaxFretSpan: 6,
+      selectedMaxStringSpan: 6
     };
   },
   computed: {
@@ -187,19 +195,12 @@ export default {
       return {
         chordTypes: this.selectedChordType,
         fretSpanMin: 0,
-        fretSpanMax: 999,
+        fretSpanMax: this.selectedMaxFretSpan,
         stringSpanMin: 0,
-        stringSpanMax: 999
+        stringSpanMax: this.selectedMaxStringSpan
       };
     }
   },
-  // watch: {
-  //   selectedChordType: function(newTypes) {
-  //     if (this.options.chordTypes != newTypes) {
-  //       this.options.chordTypes = this.selectedChordType;
-  //     }
-  //   }
-  // },
   methods: {
     handleOpenMenu: function() {
       document.querySelector(".bm-menu").classList.add("bm-menu--open");
@@ -295,6 +296,26 @@ code {
   .bm-burger-bars.line-style {
     display: none;
   }
+
+  .filter-controls__label {
+    text-align: left;
+  }
+
+  .input-group {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    padding: 0 15px;
+    height: 85px;
+    float: left;
+
+    label,
+    select,
+    input {
+      text-align: left;
+      width: 100%;
+    }
+  }
 }
 /* Larger than mobile */
 @media (min-width: 400px) {
@@ -319,8 +340,18 @@ code {
     &__title {
       text-align: left;
     }
+
+    .filter-controls__label {
+      padding: 0 20px;
+    }
+
+    .input-group {
+      width: 50%;
+      padding: 0 20px;
+    }
   }
 }
+
 /* Larger than phablet */
 @media (min-width: 550px) {
   #app {
@@ -340,6 +371,10 @@ code {
       &::after {
         font-size: 40px;
       }
+    }
+
+    .input-group {
+      width: 33%;
     }
   }
 }
