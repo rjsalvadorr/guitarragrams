@@ -53,3 +53,7 @@ body.body--lilypond .pattern-group .pattern-group__description {
 body.body--lilypond .pattern-group {
   background-color: #ffffff;
 }
+
+body.body--lilypond .bm-menu {
+  background-color: #ffffff !important;
+}

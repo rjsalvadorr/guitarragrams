@@ -316,7 +316,7 @@ code {
       display: block;
       margin-bottom: 20px;
     }
-    
+
     .filter-controls__label {
       text-align: left;
       margin-bottom: 0;

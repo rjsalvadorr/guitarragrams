@@ -19,11 +19,11 @@ export const groupLabels = {
 
 export const chordLabels = {
   maj: "Major",
-  min: "Minor",
-  dim: "Diminished",
   maj7: "Major 7th",
-  m7: "Minor 7th",
   "7": "Dominant 7th",
+  min: "Minor",
+  m7: "Minor 7th",
+  dim: "Diminished",
   m7b5: "Half-diminished 7th",
   dim7: "Diminished 7th"
 };

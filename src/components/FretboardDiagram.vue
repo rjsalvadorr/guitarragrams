@@ -2,7 +2,7 @@
   <div class="fretboard-diagram">
     <slot></slot>
     <div :class="['fretboard', 'fretboard--' + instrument]">
-      <span class="fretboard-diagram__chord-type">{{ diagramData.chordQuality }}</span>
+      <span class="fretboard-diagram__chord-type">{{ diagramLabel }}</span>
       <span class="fretboard-diagram__inversion">{{ inversion }}</span>
       <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
         <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
@@ -15,6 +15,7 @@
 
 <script>
 import FretboardMarker from "./FretboardMarker.vue";
+import { chordLabels } from "../utils/constants";
 
 export default {
   name: "FretboardDiagram",
@@ -83,6 +84,9 @@ export default {
       } else {
         return `${this.diagramData.inversion} Inversion`;
       }
+    },
+    diagramLabel: function() {
+      return chordLabels[this.diagramData.chordQuality];
     }
   },
   components: {
