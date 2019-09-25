@@ -24,6 +24,17 @@ export const chordLabels = {
   min: "minor",
   m7: "minor 7th",
   dim: "diminished",
-  m7b5: "half-diminished 7th",
+  m7b5: "half-dim. 7th",
   dim7: "diminished 7th"
+};
+
+export const colorTypes = {
+  maj: "maj",
+  maj7: "maj",
+  "7": "maj",
+  min: "min",
+  m7: "min",
+  dim: "dim",
+  m7b5: "dim",
+  dim7: "dim"
 };

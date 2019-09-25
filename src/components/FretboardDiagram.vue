@@ -2,8 +2,10 @@
   <div class="fretboard-diagram">
     <slot></slot>
     <div :class="['fretboard', 'fretboard--' + instrument]">
-      <span class="fretboard-diagram__chord-type">{{ diagramLabel }}</span>
-      <span class="fretboard-diagram__inversion">{{ inversion }}</span>
+      <div :class="['fretboard-diagram__label', 'fretboard-diagram__label--' + colorType]">
+        <span class="fretboard-diagram__chord-type">{{ diagramLabel }}</span>
+        <span class="fretboard-diagram__inversion">{{ inversion }}</span>
+      </div>
       <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
         <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
           <FretboardMarker :markerData="processedMarkers" :stringNum="n" :fretNum="m"/>
@@ -15,7 +17,7 @@
 
 <script>
 import FretboardMarker from "./FretboardMarker.vue";
-import { chordLabels } from "../utils/constants";
+import { chordLabels, colorTypes } from "../utils/constants";
 
 export default {
   name: "FretboardDiagram",
@@ -87,6 +89,9 @@ export default {
     },
     diagramLabel: function() {
       return chordLabels[this.diagramData.chordQuality];
+    },
+    colorType: function() {
+      return colorTypes[this.diagramData.chordQuality];
     }
   },
   components: {
@@ -105,19 +110,38 @@ $borderWidth: 3px;
 
   &__chord-type,
   &__inversion {
-    text-align: left;
     display: block;
     line-height: 1.1;
   }
 
   &__chord-type {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   &__inversion {
     font-size: 1.75rem;
-    margin-bottom: 0.75rem;
+  }
+}
+
+.fretboard-diagram__label {
+  text-align: center;
+  padding: 0.5rem 0 1.25rem 0;
+  border-radius: 6px 6px 0px 0px;
+
+  &--maj {
+    /* yellow */
+    background-color: #fee9b2;
+  }
+
+  &--min {
+    /* blue */
+    background-color: #bbded6;
+  }
+
+  &--dim {
+    /* red */
+    background-color: #ffb6b9;
   }
 }
 
