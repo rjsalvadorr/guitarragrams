@@ -80,9 +80,9 @@ export default {
     },
     inversion: function() {
       if (this.diagramData.inversion === "root") {
-        return "Root Position";
+        return "root position";
       } else {
-        return `${this.diagramData.inversion} Inversion`;
+        return `${this.diagramData.inversion} inversion`;
       }
     },
     diagramLabel: function() {
@@ -107,7 +107,6 @@ $borderWidth: 3px;
   &__inversion {
     text-align: left;
     display: block;
-    text-transform: capitalize;
     line-height: 1.1;
   }
 
