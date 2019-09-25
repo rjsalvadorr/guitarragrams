@@ -128,6 +128,7 @@ $borderWidth: 3px;
   text-align: center;
   padding: 0.5rem 0 1.25rem 0;
   border-radius: 6px 6px 0px 0px;
+  color: #111111;
 
   &--maj {
     /* yellow */
