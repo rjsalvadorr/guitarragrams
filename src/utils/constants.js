@@ -38,3 +38,11 @@ export const colorTypes = {
   m7b5: "dim",
   dim7: "dim"
 };
+
+export const markerTags = {
+  root: "R",
+  "3rd": "3",
+  "5th": "5",
+  "7th": "7",
+  "9th": "9"
+};

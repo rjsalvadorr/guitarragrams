@@ -8,7 +8,13 @@
       </div>
       <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
         <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
-          <FretboardMarker :markerData="processedMarkers" :stringNum="n" :fretNum="m"/>
+          <FretboardMarker
+            :markerData="processedMarkers"
+            :stringNum="n"
+            :fretNum="m"
+            :colorType="colorType"
+            :chordType="chordType"
+          />
         </div>
       </div>
     </div>
@@ -92,6 +98,9 @@ export default {
     },
     colorType: function() {
       return colorTypes[this.diagramData.chordQuality];
+    },
+    chordType: function() {
+      return this.diagramData.chordQuality;
     }
   },
   components: {

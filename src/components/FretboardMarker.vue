@@ -1,24 +1,44 @@
 <template>
   <div :class="['marker', markerClassname]">
+    <div class="marker-tag">{{ markerTag }}</div>
   </div>
 </template>
 
 <script>
+import { markerTags } from "../utils/constants";
+
 export default {
   name: "FretboardMarker",
   props: {
     stringNum: Number,
     fretNum: Number,
-    markerData: Array
+    markerData: Array,
+    colorType: String,
+    chordType: String
   },
   computed: {
     markerClassname: function() {
+      let className = "";
       for (var i = 0; i < this.markerData.length; i++) {
         if (
           this.markerData[i].string == this.stringNum &&
           this.markerData[i].fret == this.fretNum
         ) {
-          return "active marker--" + this.markerData[i].degree;
+          className = `active marker--${this.markerData[i].degree}`;
+          className += ` marker--${this.colorType}`;
+          className += ` marker--${this.chordType}`;
+          return className;
+        }
+      }
+      return "";
+    },
+    markerTag: function() {
+      for (var i = 0; i < this.markerData.length; i++) {
+        if (
+          this.markerData[i].string == this.stringNum &&
+          this.markerData[i].fret == this.fretNum
+        ) {
+          return markerTags[this.markerData[i].degree];
         }
       }
       return "";
@@ -30,7 +50,7 @@ export default {
 <!-- Not scoped, so the CSS is shared with other components -->
 <style lang="scss">
 $fretUnit: 25px;
-$markerDiameter: $fretUnit * 0.66;
+$markerDiameter: $fretUnit * 0.75;
 $borderWidth: 3px;
 
 .marker {
@@ -40,42 +60,92 @@ $borderWidth: 3px;
   border-radius: 50%;
   margin: auto;
   position: relative;
-  top: -$fretUnit / 2;
+  top: -$fretUnit / 1.75;
   border: $borderWidth #000000 solid;
   z-index: 40;
   display: none;
 
+  &-tag {
+    font-weight: bold;
+    font-size: $fretUnit / 1.8;
+    line-height: $fretUnit / 1.8;
+    margin-top: $fretUnit / 12;
+  }
+
   &.active {
     display: block;
   }
+}
 
-  &--3rd {
-    background: #aaaaaa;
+.marker--root {
+  background: #ffffff;
+
+  .marker-tag {
+    color: #000000;
+  }
+}
+
+.marker--3rd {
+  background: #aaaaaa;
+
+  &.marker--maj {
+    background-color: scale-color(#fee9b2, $lightness: -20%, $saturation: -5%);
   }
 
-  &--5th {
-    background: #000000;
+  &.marker--min {
+    background-color: scale-color(#bbded6, $lightness: -20%, $saturation: -5%);
   }
 
-  &--7th {
-    background: #888888;
+  &.marker--dim {
+    background-color: scale-color(#bbded6, $lightness: -20%, $saturation: -5%);
   }
 
-  &--9th {
-    background: #ffffff;
+  .marker-tag {
+    color: #000000;
+  }
+}
+
+.marker--5th {
+  background: #000000;
+
+  &.marker--dim {
+    background-color: #990000;
   }
 
-  &--7th::after,
-  &--9th::after {
-    content: "";
-    background: #000000;
-    width: $markerDiameter / 2;
-    height: $markerDiameter / 2;
-    border-radius: 50%;
-    display: block;
-    position: relative;
-    top: $markerDiameter / 4;
-    left: $markerDiameter / 4;
+  .marker-tag {
+    color: #ffffff;
+  }
+}
+
+.marker--7th {
+  background: #888888;
+
+  &.marker--maj {
+    background-color: #fee9b2;
+  }
+
+  &.marker--min {
+    background-color: #bbded6;
+  }
+
+  &.marker--dim {
+    background-color: #bbded6;
+  }
+
+  &.marker--7 {
+    background-color: #bbded6 !important;
+  }
+
+  .marker-tag {
+    color: #000000;
+  }
+}
+
+.marker--9th {
+  background: #cccccc;
+
+  .marker-tag {
+    color: #000000;
   }
 }
 </style>
