@@ -8,7 +8,12 @@
       </div>
       <div v-for="n in strings" :key="n" :class="['string', 'string--' + n]">
         <div v-for="m in frets" :key="m" :class="['fret', 'fret--' + m]">
-          <FretboardMarker :markerData="processedMarkers" :stringNum="n" :fretNum="m"/>
+          <FretboardMarker
+            :markerData="processedMarkers"
+            :stringNum="n"
+            :fretNum="m"
+            :colorType="colorType"
+          />
         </div>
       </div>
     </div>

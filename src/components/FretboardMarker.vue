@@ -12,21 +12,26 @@ export default {
   props: {
     stringNum: Number,
     fretNum: Number,
-    markerData: Array
+    markerData: Array,
+    colorType: String,
   },
   computed: {
     markerClassname: function() {
+      let className = '';
       for (var i = 0; i < this.markerData.length; i++) {
         if (
           this.markerData[i].string == this.stringNum &&
           this.markerData[i].fret == this.fretNum
         ) {
-          return "active marker--" + this.markerData[i].degree;
+          className = `active marker--${this.markerData[i].degree}`;
+          className += ` marker--${this.colorType}`;
+          return className;
         }
       }
       return "";
     },
     markerTag: function() {
+      console.log(this.stringNum, this.fretNum, this.markerData, this.colorType);
       for (var i = 0; i < this.markerData.length; i++) {
         if (
           this.markerData[i].string == this.stringNum &&
@@ -59,7 +64,7 @@ $borderWidth: 3px;
   z-index: 40;
   display: none;
 
-  .marker-tag {
+  &-tag {
     font-weight: bold;
     font-size: $fretUnit / 1.8;
     line-height: $fretUnit / 1.8;
@@ -69,45 +74,73 @@ $borderWidth: 3px;
   &.active {
     display: block;
   }
+}
 
-  &--root {
-    background: #ffffff;
+.marker--root {
+  background: #ffffff;
 
-    .marker-tag {
-      color: #000000;
-    }
+  .marker-tag {
+    color: #000000;
+  }
+}
+
+.marker--3rd {
+  background: #aaaaaa;
+
+  &.marker--maj {
+    background-color: scale-color(#fee9b2, $lightness: -20%, $saturation: -5%);
   }
 
-  &--3rd {
-    background: #aaaaaa;
-
-    .marker-tag {
-      color: #000000;
-    }
+  &.marker--min {
+    background-color: scale-color(#bbded6, $lightness: -20%, $saturation: -5%);
+  }
+  
+  &.marker--dim {
+    background-color: scale-color(#ffb6b9, $lightness: -20%, $saturation: -5%);
   }
 
-  &--5th {
-    background: #000000;
+  .marker-tag {
+    color: #000000;
+  }
+}
 
-    .marker-tag {
-      color: #ffffff;
-    }
+.marker--5th {
+  background: #000000;
+
+  &.marker--dim {
+    background-color: #660000;
   }
 
-  &--7th {
-    background: #888888;
+  .marker-tag {
+    color: #ffffff;
+  }
+}
 
-    .marker-tag {
-      color: #000000;
-    }
+.marker--7th {
+  background: #888888;
+
+  &.marker--maj {
+    background-color: #fee9b2;
   }
 
-  &--9th {
-    background: #ffffff;
+  &.marker--min {
+    background-color: #bbded6;
+  }
+  
+  &.marker--dim {
+    background-color: #ffb6b9;
+  }
 
-    .marker-tag {
-      color: #000000;
-    }
+  .marker-tag {
+    color: #000000;
+  }
+}
+
+.marker--9th {
+  background: #cccccc;
+
+  .marker-tag {
+    color: #000000;
   }
 }
 </style>
