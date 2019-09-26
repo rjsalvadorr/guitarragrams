@@ -14,10 +14,11 @@ export default {
     fretNum: Number,
     markerData: Array,
     colorType: String,
+    chordType: String
   },
   computed: {
     markerClassname: function() {
-      let className = '';
+      let className = "";
       for (var i = 0; i < this.markerData.length; i++) {
         if (
           this.markerData[i].string == this.stringNum &&
@@ -25,13 +26,13 @@ export default {
         ) {
           className = `active marker--${this.markerData[i].degree}`;
           className += ` marker--${this.colorType}`;
+          className += ` marker--${this.chordType}`;
           return className;
         }
       }
       return "";
     },
     markerTag: function() {
-      console.log(this.stringNum, this.fretNum, this.markerData, this.colorType);
       for (var i = 0; i < this.markerData.length; i++) {
         if (
           this.markerData[i].string == this.stringNum &&
@@ -94,9 +95,9 @@ $borderWidth: 3px;
   &.marker--min {
     background-color: scale-color(#bbded6, $lightness: -20%, $saturation: -5%);
   }
-  
+
   &.marker--dim {
-    background-color: scale-color(#ffb6b9, $lightness: -20%, $saturation: -5%);
+    background-color: scale-color(#bbded6, $lightness: -20%, $saturation: -5%);
   }
 
   .marker-tag {
@@ -108,7 +109,7 @@ $borderWidth: 3px;
   background: #000000;
 
   &.marker--dim {
-    background-color: #660000;
+    background-color: #990000;
   }
 
   .marker-tag {
@@ -126,9 +127,13 @@ $borderWidth: 3px;
   &.marker--min {
     background-color: #bbded6;
   }
-  
+
   &.marker--dim {
-    background-color: #ffb6b9;
+    background-color: #bbded6;
+  }
+
+  &.marker--7 {
+    background-color: #bbded6 !important;
   }
 
   .marker-tag {

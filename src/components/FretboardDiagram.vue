@@ -13,6 +13,7 @@
             :stringNum="n"
             :fretNum="m"
             :colorType="colorType"
+            :chordType="chordType"
           />
         </div>
       </div>
@@ -97,6 +98,9 @@ export default {
     },
     colorType: function() {
       return colorTypes[this.diagramData.chordQuality];
+    },
+    chordType: function() {
+      return this.diagramData.chordQuality;
     }
   },
   components: {
