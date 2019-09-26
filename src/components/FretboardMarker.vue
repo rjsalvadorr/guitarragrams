@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {markerTags} from '../utils/constants'
+import { markerTags } from "../utils/constants";
 
 export default {
   name: "FretboardMarker",
@@ -96,7 +96,7 @@ $borderWidth: 3px;
 
   &--7th {
     background: #888888;
-    
+
     .marker-tag {
       color: #000000;
     }
@@ -104,7 +104,7 @@ $borderWidth: 3px;
 
   &--9th {
     background: #ffffff;
-    
+
     .marker-tag {
       color: #000000;
     }
