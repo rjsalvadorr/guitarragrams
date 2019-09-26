@@ -4,25 +4,35 @@
     <div class="legend-row legend-row--1">
       <div class="legend-unit">
         <span class="legend-unit__label">Root</span>
-        <div class="legend-unit__icon marker active marker--root" />
+        <div class="legend-unit__icon marker active marker--root" >
+          <div class="marker-tag">R</div>
+        </div>
       </div>
       <div class="legend-unit">
         <span class="legend-unit__label">3rd</span>
-        <div class="legend-unit__icon marker active marker--3rd" />
+        <div class="legend-unit__icon marker active marker--3rd" >
+          <div class="marker-tag">3</div>
+        </div>
       </div>
       <div class="legend-unit">
         <span class="legend-unit__label">5th</span>
-        <div class="legend-unit__icon marker active marker--5th" />
+        <div class="legend-unit__icon marker active marker--5th" >
+          <div class="marker-tag">5</div>
+        </div>
       </div>
     </div>
     <div class="legend-row legend-row--2">
       <div class="legend-unit">
         <span class="legend-unit__label">7th</span>
-        <div class="legend-unit__icon marker active marker--7th" />
+        <div class="legend-unit__icon marker active marker--7th" >
+          <div class="marker-tag">7</div>
+        </div>
       </div>
       <div class="legend-unit">
         <span class="legend-unit__label">9th</span>
-        <div class="legend-unit__icon marker active marker--9th" />
+        <div class="legend-unit__icon marker active marker--9th" >
+          <div class="marker-tag">9</div>
+        </div>
       </div>
     </div>
 
