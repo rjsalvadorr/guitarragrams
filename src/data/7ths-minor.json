@@ -30,6 +30,26 @@
         "5th,3,3",
         "root,4,1"
       ]
+    },
+    {
+      "chordQuality": "m7",
+      "inversion": "1st",
+      "markers": [
+        "7th,2,2",
+        "5th,3,3",
+        "root,4,1",
+        "3rd,6,2"
+      ]
+    },
+    {
+      "chordQuality": "m7",
+      "inversion": "1st",
+      "markers": [
+        "7th,1,2",
+        "5th,2,4",
+        "root,3,1",
+        "3rd,5,2"
+      ]
     }
   ]
 }
